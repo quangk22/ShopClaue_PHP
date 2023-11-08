@@ -38,7 +38,7 @@
                                 <li class="ml-1">Men <i
                                         class="fa-solid fa-chevron-right text-[#878787] text-[10px]"></i>
                                 </li>
-                                <li class="ml-1 text-[#878787] detail2" id="nameDetail"></li>
+                                <li class="ml-1 text-[#878787] detail2" id="nameDetail"><?php echo $_GET["name_product"] ?></li>
                             </ul>
                         </nav>
                     </div>
@@ -46,40 +46,39 @@
                         <div class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
                             <div class="w-full">
                                 <div class="grid grid-cols-2 grid-rows-2 gap-3">
-                                    <div class="image" id="imgProduct"><img src="" alt=""></div>
-                                    <div class="image" id="imgProduct"><img src="" alt=""></div>
-                                    <div class="image" id="imgProduct"><img src="" alt=""></div>
-                                    <div class="image" id="imgProduct"><img src="" alt=""></div>
+                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
                                 </div>
                             </div>
                             <div class="pl-8 max-md:pl-0 max-md:pt-3">
                                 <div class="detail">
-                                    <h1 class="text-base font-semibold mb-1 name" id="nameProduct"></h1>
+                                    <h1 class="text-lg font-semibold mb-1 name" id="nameProduct"><?php echo $_GET["name_product"] ?></h1>
                                     <div class="text-[#878787] mb-5"><span class="text-[22px] price"
-                                            id="priceProduct"></span></div>
+                                            id="priceProduct">$<?php echo $_GET["price_product"] ?>.000</span></div>
                                     <div class="text-[#878787] text-sm mb-5">
                                         <p class="description" id="description"></p>
                                     </div>
                                     <div class="mb-5">
                                         <form action="" class="flex">
                                             <div class="mr-[10px]">
-                                                <div
-                                                    class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
-                                                    <input type="number" min="1" value="1" inputmode="none" readonly
-                                                        class="outline-none w-full flex text-center bg-transparent"
-                                                        id="customNumberInput">
-                                                    <div
-                                                        class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                        <div class="ml-3" id="decreaseButton"><i
-                                                                class="fa-solid fa-minus"></i></div>
-                                                        <div class="mr-3" id="increaseButton"><i
-                                                                class="fa-solid fa-plus"></i></div>
-                                                    </div>
-                                                </div>
+                                            <div
+                                              class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
+                                              <input type="number" min="1" value="1" inputmode="none" readonly
+                                                  class="outline-none w-full flex text-center bg-transparent"
+                                                  id="customNumberInput">
+                                              <div
+                                                  class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                  <div class="ml-3" id="decreaseButton"><i
+                                                          class="fa-solid fa-minus"></i></div>
+                                                  <div class="mr-3" id="increaseButton"><i
+                                                          class="fa-solid fa-plus"></i></div>
+                                              </div>
+                                          </div>
                                             </div>
                                             <div class="mr-[10px]">
-                                                <button
-                                                    class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">Add to cart</button>
+                                               <a href="#" class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">Add to cart </a>
                                             </div>
                                             <div
                                                 class="flex justify-center items-center border border-black rounded-full">
@@ -116,19 +115,19 @@
                                             you purchase 3 products</p>
                                         <div class="flex mb-5">
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="" alt="" class=" w-[70px] h-[70px]"></div>
+                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                                 <span class="px-1 text-[#878787]">+</span>
                                             </div>
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="" alt="" class=" w-[70px] h-[70px]"></div>
+                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                                 <span class="px-1 text-[#878787]">+</span>
                                             </div>
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="" alt="" class=" w-[70px] h-[70px]"></div>
+                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                                 <span class="px-1 text-[#878787]">+</span>
                                             </div>
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="" alt="" class=" w-[70px] h-[70px]"></div>
+                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                             </div>
                                         </div>
                                         <div class="list-select">
@@ -227,7 +226,6 @@
                                     <div class="relative ">
                                         <div class=" ">
                                             <img src="./media/img/look10.jpg" alt="" class="w-full">
-                                            <!-- before:bg-[rgba(0,0,0,.3)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300 cursor-pointer -->
                                         </div>
                                         <div class="bg-[#65affa] rounded-full w-10 h-10 max-sm:w-7 max-sm:h-7 max-sm:text-[10px]  text-white flex justify-center items-center absolute top-[18%] left-[16%] group cursor-pointer  group-hover:opacity-5 "
                                             id="btn_1" onclick="toggleDisplay('btn_1')">
@@ -948,7 +946,6 @@
         </div>
     </div>
     <script src="../public/js/main.js"></script>
-    <!-- <script src="../public/js/DetailProduct.js"></script> -->
 </body>
 
 </html>

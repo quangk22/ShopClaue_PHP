@@ -11,8 +11,7 @@
                      <!-- Slideshow Container -->
                      <div class="slideshow-item w-full m-auto h-[90vh] " ontouchstart="touchStart(event)">
                          <div class="slideshow-image h-full">
-                             <img src="" alt="" loading="lazy " id="imageProduct"
-                                 class="w-full h-[90vh]">
+                             <img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" loading="lazy " id="imageProduct" class="w-full h-[90vh]">
                          </div>
                          <div class="slideshow-image" ontouchstart="touchStart(event)">
                              <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy"

@@ -44,7 +44,7 @@
                 </div>
                 <!-- LOGO -->
                 <div class="logo  items-center flex justify-center cursor-pointer">
-                  <img loading="lazy" src="media/img/logo.png" alt="">
+                 <a href="home.php"><img loading="lazy" src="media/img/logo.png" alt=""></a> 
                 </div>
                 <!-- THanh lua chon -->
                 <ul class="flex items-center justify-end gap-8  text-[14px] text-black max-lg:hidden ">

@@ -40,7 +40,19 @@ window.addEventListener('scroll', function () {
     }
 });
 // sản phẩm 
-
+const quickShopButtons = document.querySelectorAll('.quickShop');
+const MotaSP = document.getElementById('MotaSP');
+const close_detail = document.getElementById('close-detail');
+    quickShopButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            MotaSP.classList.remove('hidden');
+        });
+    });
+    if (close_detail) {
+        close_detail.addEventListener('click', function () {
+            MotaSP.classList.add('hidden');
+        });
+    }
 // end sản phẩm
 // 
 // Lấy tham chiếu đến phần tử <input> và các nút

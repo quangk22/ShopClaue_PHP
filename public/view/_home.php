@@ -204,55 +204,56 @@
         </div>
         <!-- END-LINE-TRENDING -->
         <div class="trending  ">
-          <div class="w-full">
-            <div class="containre-product max-w-[73.125rem] m-auto px-5">
-              <div class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2" id="product1">
-             <!-- 1 -->
-              <div class="item">
-                <div class="product-img relative group">
-                      <div class="img">
-                    <a href="../public/detailProduct.html?id=1" class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                        <img src="./media/img/p2-5-300x383.jpg" alt="" loading="lazy">
-                    </a>
-                     <a href="../public/detailProduct.html?id=1" class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                        <img src="./media/img/id11.jpg" alt="" loading="lazy">
-                     </a>
-                      </div>
-                      <div class="absolute top-3 left-3 max-lg:block ">
-                    <a href="#" class="hidden group-hover:block max-lg:block">
-                         <div class="block max-lg:block">
-                            <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i></div>
-                            <div class=" lg:hidden  max-md:block "><i class="fa-solid fa-eye fa-lg text-white" data-product-id="1"></i></div></div>
-                     </a>
-                      </div>
-                      <div class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
-                         <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
-                            <a href="../public/detailProduct.html?id=1" class="whitespace-nowrap">Select options</a>
-                         </div>
-                        <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop" data-product-id="1">
-                            Quick Shop
-                       </div>
-                      </div>
+            <div class="w-full">
+               <div class="containre-product max-w-[73.125rem] m-auto px-5">
+                  <div class="grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2" id="product1">
+                    <!-- 1 -->
+                    <?php  for ($i=0; $i < 8; $i++) {  ?>
+                <div class="item">
+                          <div class="product-img relative group">
+                              <div class="img">
+                                  <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                      class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                      <img src="./media/img/<?php echo $productList[$i]['image'];?>.jpg" alt="" loading="lazy">
+                                  </a>
+                                  <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                      class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                      <img src="./media/img/id11.jpg" alt="" loading="lazy">
+                                  </a>
+                              </div>
+                              <div class="absolute top-3 left-3 max-lg:block ">
+                                  <a href="#" class="hidden group-hover:block max-lg:block">
+                                      <div class="block max-lg:block">
+                                          <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i>
+                                          </div>
+                                          <div class=" lg:hidden  max-md:block "><i
+                                                  class="fa-solid fa-eye fa-lg text-white" data-product-id="1"></i></div>
+                                      </div>
+                                  </a>
+                              </div>
+                              <div class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
+                                  <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                      <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>" class="whitespace-nowrap">Selec options</a>
+                                  </div>
+                                  <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop" data-product-id="1"> Quick Shop
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="product-info mt-[15px] font-poppins text-sm  ">
+                              <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
+                                  <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"><?php echo $productList[$i]['name']; ?></a>
+                              </h3>
+                              <span class="text-[#696969]"> $<?php
+                                $discount = 30;
+                                $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);echo $discountedPrice ?>.000 - 
+                            $<?php echo $productList[$i]['price']; ?>.000
+                            </span>
+                          </div>
+                </div>            
+            <?php }?>
                 </div>
-                <div class="product-info mt-[15px] font-poppins text-sm  ">
-                     <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
-                       <a href="./view/detail_product.php?id=1">Cyan Boheme Cyan</a>
-                     </h3>
-                      <span class="text-[#696969]"> $40.00 - $45.00 </span>
-                       <div class="flex">
-                         <bottom class="rounded-full m-1 flex bg-black border-[#333] border-[2px]">
-                           <span class="w-4 h-4 bg-[#25bdb0] rounded-full"></span>
-                          </bottom>
-                          <bottom class="rounded-full m-1 flex  border-[#ddd] border-[2px]">
-                             <span class="w-4 h-4 bg-[#fcc6de] rounded-full"></span>
-                           </bottom>
-                        </div>
-                                </div>
-                       </div>
-              </div>
-            <!-- end product1 -->
             </div>
-          </div>
+           </div>
         </div>
         <!-- End trending -->
         <div class="flex min-h-[400px] items-center justify-center  sm:mx-0   mt-10 px-5">
@@ -288,11 +289,8 @@
 
           </div><!-- End lookbook -->
         </div>
-
         <!-- LINE Best-saler -->
-
         <!-- END-LINE-Best-saler -->
-
         <div class="best-seller  max-w-[73.125rem] m-auto px-5">
           <div class="subheadLine flex justify-center items-center mb-12 mt-10  ">
             <div class="subheadLine-deco-line w-16 h-[2px] bg-black max-sm:w-10"></div>
@@ -307,10 +305,54 @@
           </div>
           <div class="bestSeller grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2" id="bestSeller">
 
-
+          <?php  for ($i=0; $i < 8; $i++) {  ?>
+                <div class="item">
+                          <div class="product-img relative group">
+                              <div class="img">
+                                  <a href="../public/detail_product?id=<?php $productList[$i]['id'];?>"
+                                      class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+                                      <img src="./media/img/<?php echo $productList[$i]['image'];?>.jpg" alt="" loading="lazy">
+                                  </a>
+                                  <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                      class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
+                                      <img src="./media/img/id11.jpg" alt="" loading="lazy">
+                                  </a>
+                              </div>
+                              <div class="absolute top-3 left-3 max-lg:block ">
+                                  <a href="#" class="hidden group-hover:block max-lg:block">
+                                      <div class="block max-lg:block">
+                                          <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i>
+                                          </div>
+                                          <div class=" lg:hidden  max-md:block "><i
+                                                  class="fa-solid fa-eye fa-lg text-white" data-product-id="1"></i></div>
+                                      </div>
+                                  </a>
+                              </div>
+                              <div class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
+                                  <div
+                                      class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
+                                      <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>" class="whitespace-nowrap">Selec options</a>
+                                  </div>
+                                  <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
+                                      data-product-id="1">
+                                      Quick Shop
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="product-info mt-[15px] font-poppins text-sm  ">
+                              <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
+                                  <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"><?php echo $productList[$i]['name']; ?></a>
+                              </h3>
+                              <span class="text-[#696969]"> $<?php
+                                $discount = 30;
+                                $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);echo $discountedPrice ?>.000 - 
+                            $<?php echo $productList[$i]['price']; ?>.000
+                            </span>
+                          </div>
+                </div>            
+            <?php }?>
           </div>
         </div><!-- End best-seller -->
-
         <!-- LINE BLOG -->
         <div class="subheadLine flex justify-center items-center mb-8 mt-8 ">
           <div class="subheadLine-deco-line w-16 h-[2px] bg-black max-sm:w-10"></div>
@@ -324,9 +366,7 @@
           <div class="subheadLine-deco-line w-16 h-[2px] bg-black max-sm:w-10 "></div>
         </div>
         <!-- END-LINE-BLOG -->
-
         <!-- Form-blog -->
-
         <div class="form-blog max-w-[73.125rem] m-auto mb-24 px-5  ">
           <div class="grid grid-cols-1 sm:grid-cols-3  gap-5  h-full">
             <!-- Content-1 -->
@@ -431,7 +471,6 @@
           </div>
 
         </div><!-- follow-us -->
-
       </main>
       <?php include "./view/inc/footer.php" ?>
     </div>

@@ -6,7 +6,6 @@ function get_all_users(){
 
     $sql = "SELECT * FROM USERS";
     $stmt = $pdo->prepare($sql);
-    
 
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC); 
