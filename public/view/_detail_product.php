@@ -43,7 +43,7 @@
                         </nav>
                     </div>
                     <div class="pt-10 w-[73.125rem] px-5 m-auto max-w-full">
-                        <div class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
+                        <form method="POST" action="db_order_items.php" class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
                             <div class="w-full">
                                 <div class="grid grid-cols-2 grid-rows-2 gap-3">
                                     <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
@@ -61,18 +61,19 @@
                                         <p class="description" id="description"></p>
                                     </div>
                                     <div class="mb-5">
-                                        <form action="" class="flex">
+                                        <!--  -->
+                                        <div class="flex">
                                             <div class="mr-[10px]">
                                             <div
                                               class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
                                               <input type="number" min="1" value="1" inputmode="none" readonly
-                                                  class="outline-none w-full flex text-center bg-transparent"
+                                                  class="outline-none w-full flex text-center bg-transparent customNumberInput"
                                                   id="customNumberInput">
                                               <div
                                                   class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                  <div class="ml-3" id="decreaseButton"><i
+                                                  <div class="ml-3 decreaseButton" id="decreaseButton"><i
                                                           class="fa-solid fa-minus"></i></div>
-                                                  <div class="mr-3" id="increaseButton"><i
+                                                  <div class="mr-3 increaseButton" id="increaseButton"><i
                                                           class="fa-solid fa-plus"></i></div>
                                               </div>
                                           </div>
@@ -84,7 +85,8 @@
                                                 class="flex justify-center items-center border border-black rounded-full">
                                                 <i class="fa-regular fa-heart p-3"></i>
                                             </div>
-                                        </form>
+                                        </div>
+                                        <!--  -->
                                         <div class="mt-6 font-semibold text-sm">
                                             <a href="#" class="mr-">Size Guide</a>
                                             <a href="#">Delivery &amp; Return</a>
@@ -191,7 +193,7 @@
                                     <div class="listProduct"></div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                         <!--  -->
                         <div class="pt-[50px] pb-[20px]">
                             <div class="">

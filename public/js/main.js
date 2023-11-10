@@ -39,26 +39,14 @@ window.addEventListener('scroll', function () {
         header2.classList.remove('fixed', 'top-0', 'left-0', 'right-0');
     }
 });
-// sản phẩm 
-const quickShopButtons = document.querySelectorAll('.quickShop');
-const MotaSP = document.getElementById('MotaSP');
-const close_detail = document.getElementById('close-detail');
-    quickShopButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            MotaSP.classList.remove('hidden');
-        });
-    });
-    if (close_detail) {
-        close_detail.addEventListener('click', function () {
-            MotaSP.classList.add('hidden');
-        });
-    }
-// end sản phẩm
+
 // 
 // Lấy tham chiếu đến phần tử <input> và các nút
-const numberInput = document.getElementById('customNumberInput');
-const decreaseButton = document.getElementById('decreaseButton');
-const increaseButton = document.getElementById('increaseButton');
+document.addEventListener("DOMContentLoaded", function () {
+    // Đặt mã JavaScript ở đây
+const numberInput = document.querySelector('.customNumberInput');
+const decreaseButton = document.querySelector('.decreaseButton');
+const increaseButton = document.querySelector('.increaseButton');
 
 let currentValue = 1; // Giá trị ban đầu
 
@@ -69,6 +57,7 @@ if (decreaseButton) {
             currentValue--;
             numberInput.value = currentValue;
         }
+        
     });
 }
 
@@ -79,6 +68,7 @@ if (increaseButton) {
         numberInput.value = currentValue;
     });
 }
+});
 // 
 const btnDescription = document.getElementById("btn-description");
 const Description = document.getElementById("description");
@@ -314,4 +304,25 @@ if (close_mobi) {
     }, 500);
     });
 }
+// -----------------------------------
+function quickShop(image,name,price){
+    var imageProduct = document.getElementById('imageProduct');
+    var nameProduct = document.getElementById('nameProduct');
+    var priceProduct = document.getElementById('priceProduct');
 
+    imageProduct.src= "../public/media/img/"+ image + ".jpg";
+    nameProduct.innerHTML = name;
+    priceProduct.innerHTML = '$'+price +'.000' ;
+    console.log("da lay");
+    zoom();
+    
+}
+function zoom(){
+    const MotaSP = document.getElementById('MotaSP');
+    MotaSP.classList.remove('hidden');
+    
+}
+function close_detail(){
+    const MotaSP = document.getElementById('MotaSP');
+    MotaSP.classList.add('hidden');
+}
