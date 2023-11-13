@@ -18,14 +18,14 @@
 
 <body class="font-poppins ">
     <div class="warapper relative ">
-            <!-- search -->
-    <?php include "./view/inc/search.php" ?>
-    <!-- cart -->
-    <?php include "./view/inc/cart.php" ?>
-    <!--chi tiết sản phẩm -->
-    <?php include "./view/inc/product_description.php" ?>
-    <!-- mobi menu -->
-    <?php include "./view/inc/mobi_menu.php" ?>
+        <!-- search -->
+        <?php include "./view/inc/search.php" ?>
+        <!-- cart -->
+        <?php include "./view/inc/cart.php" ?>
+        <!--chi tiết sản phẩm -->
+        <?php include "./view/inc/product_description.php" ?>
+        <!-- mobi menu -->
+        <?php include "./view/inc/mobi_menu.php" ?>
         <div class="container-wrapper ">
             <?php include "./view/inc/header.php" ?>
             <main class="">
@@ -50,139 +50,91 @@
                                             <th class="p-4 text-start">Product</th>
                                             <th class="p-4 max-md:hidden">Price</th>
                                             <th class="p-4 max-md:hidden">Quantity</th>
-                                            <th class="p-4  md:hidden"></th>    
+                                            <th class="p-4  md:hidden"></th>
                                             <th class="p-4 max-md:flex max-md:justify-end inline-block">Total</th>
                                             <th class="p-4 max-md:hidden">Remove</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="border-b ">
-                                            <td class="p-4">
-                                                <img src="./media/img/ck-1.jpg" alt="" class="w-[100px]">
-                                            </td>
-                                            <td class="p-4 text-sm  ">
-                                                <span>Sweatshirt in Geometric Print - Grey</span>
-                                                <dl class="flex text-[#878787] mt-1">
-                                                    <dt class="">Size:</dt>
-                                                    <dd class="ml-1">
-                                                        <p>M</p>
-                                                    </dd>
-                                                </dl>
-                                                <div class="hidden max-md:block">
-                                                    <span class="">
-                                                        <bdi><span class="">$</span>30.00</bdi>
+                                        <?php foreach ($itemsList as $key => $items_list) { ?>
+                                            <tr class="border-b ">
+                                                <td class="p-4">
+                                                    <img src="./media/img/<?php echo $items_list['image'] ?>.jpg" alt=""
+                                                        class="w-[100px]">
+                                                </td>
+                                                <td class="p-4 text-sm  ">
+                                                    <span>
+                                                        <?php echo $items_list['name'] ?>
                                                     </span>
+                                                    <dl class="flex text-[#878787] mt-1">
+                                                        <dt class="">Size:</dt>
+                                                        <dd class="ml-1">
+                                                            <p>M</p>
+                                                        </dd>
+                                                    </dl>
+                                                    <div class="hidden max-md:block">
+                                                        <span class="">
+                                                            <bdi><span class="">$</span>
+                                                                <?php echo $items_list['price'] ?>
+                                                            </bdi>
+                                                        </span>
+                                                        <div
+                                                            class="border-2 border-black rounded-full w-[115px]  p-2 relative mt-2">
+                                                            <input type="number" value="1"
+                                                                class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
+                                                            <div
+                                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                                                                <button class="absolute left-[-36px] top-[-9px]"><i
+                                                                        class="fa-solid fa-minus"></i></button>
+                                                                <button class="absolute right-[-36px] top-[-9px]"><i
+                                                                        class="fa-solid fa-plus"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="p-4 text-center text-[#878787] max-md:hidden">
+                                                    <span class="">
+                                                        <bdi><span class="">$</span>
+                                                            <?php echo $items_list['price'] ?>.000
+                                                        </bdi>
+                                                    </span>
+                                                </td>
+                                                <td class="p-4 text-center relative max-md:hidden">
                                                     <div
-                                                        class="border-2 border-black rounded-full w-[115px]  p-2 relative mt-2">
+                                                        class="border-2 border-black rounded-full w-[115px]  p-2 float-none justify-center flex items-center text-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2">
                                                         <input type="number" value="1"
                                                             class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
                                                         <div
                                                             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                                                            <button class="absolute left-[-36px] top-[-9px]"><i
+                                                            <button class="absolute left-[-36px] top-[-12px]"><i
                                                                     class="fa-solid fa-minus"></i></button>
-                                                            <button class="absolute right-[-36px] top-[-9px]"><i
+                                                            <button class="absolute right-[-36px] top-[-12px]"><i
                                                                     class="fa-solid fa-plus"></i></button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td class="p-4 text-center text-[#878787] max-md:hidden">
-                                                <span class="">
-                                                    <bdi><span class="">$</span>30.00</bdi>
-                                                </span>
-                                            </td>
-                                            <td class="p-4 text-center relative max-md:hidden">
-                                                <div
-                                                    class="border-2 border-black rounded-full w-[115px]  p-2 float-none justify-center flex items-center text-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2">
-                                                    <input type="number" value="1"
-                                                        class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
-                                                    <div
-                                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                                                        <button class="absolute left-[-36px] top-[-12px]"><i
-                                                                class="fa-solid fa-minus"></i></button>
-                                                        <button class="absolute right-[-36px] top-[-12px]"><i
-                                                                class="fa-solid fa-plus"></i></button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="p-4 text-center text-[#878787]">
-                                                <span class="text-center">
-                                                    <bdi><span class="">$</span>30.00</bdi>
-                                                </span>
-                                            </td>
-                                            <td class="text-center p-4">
-                                                <button>
-                                                    <i class="fa-solid fa-x"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-b">
-                                            <td class="p-4">
-                                                <img src="./media/img/ck-1.jpg" alt="" class="w-[100px]">
-                                            </td>
-                                            <td class="p-4 text-sm  ">
-                                                <span>Sweatshirt in Geometric Print - Grey</span>
-                                                <dl class="flex text-[#878787] mt-1">
-                                                    <dt class="">Size:</dt>
-                                                    <dd class="ml-1">
-                                                        <p>M</p>
-                                                    </dd>
-                                                </dl>
-                                                <div class="hidden max-md:block">
-                                                    <span class="">
-                                                        <bdi><span class="">$</span>30.00</bdi>
+                                                </td>
+                                                <td class="p-4 text-center text-[#878787]">
+                                                    <span class="text-center">
+                                                        <bdi><span class="">$</span>
+                                                            <?php echo $items_list['price'] ?>.000
+                                                        </bdi>
                                                     </span>
-                                                    <div
-                                                        class="border-2 border-black rounded-full w-[115px]  p-2 relative mt-2">
-                                                        <input type="number" value="1"
-                                                            class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
-                                                        <div
-                                                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                                                            <button class="absolute left-[-36px] top-[-9px]"><i
-                                                                    class="fa-solid fa-minus"></i></button>
-                                                            <button class="absolute right-[-36px] top-[-9px]"><i
-                                                                    class="fa-solid fa-plus"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="p-4 text-center text-[#878787] ">
-                                                <span class="">
-                                                    <bdi><span class="">$</span>30.00</bdi>
-                                                </span>
-                                            </td>
-                                            <td class="p-4 text-center relative max-md:hidden">
-                                                <div
-                                                    class="border-2 border-black rounded-full w-[115px]  p-2 float-none justify-center flex items-center text-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2">
-                                                    <input type="number" value="1"
-                                                        class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
-                                                    <div
-                                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                                                        <button class="absolute left-[-36px] top-[-12px]"><i
-                                                                class="fa-solid fa-minus"></i></button>
-                                                        <button class="absolute right-[-36px] top-[-12px]"><i
-                                                                class="fa-solid fa-plus"></i></button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="p-4 text-center text-[#878787] max-md:hidden">
-                                                <span class="text-center">
-                                                    <bdi><span class="">$</span>30.00</bdi>
-                                                </span>
-                                            </td>
-                                            <td class="text-center p-4">
-                                                <button>
-                                                    <i class="fa-solid fa-x"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                                <td class="text-center p-4">
+                                                    <button onclick="delete_items( <?php echo $items_list['id'] ?>)">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                         <tr>
                                             <td colspan="6" class="p-4 ">
                                                 <div class="float-left max-md:float-none max-md:w-full ">
-                                                    <label for="coupon_code" class="max-md:block max-md:py-5">Coupon:</label>
+                                                    <label for="coupon_code"
+                                                        class="max-md:block max-md:py-5">Coupon:</label>
                                                     <input type="text" name="coupon_code"
-                                                        class="outline-none border  rounded-full p-2 px-3 max-md:w-full " id=""
-                                                        value="" placeholder="Coupon code">
+                                                        class="outline-none border  rounded-full p-2 px-3 max-md:w-full "
+                                                        id="" value="" placeholder="Coupon code">
                                                     <button
                                                         class="border-2 border-black p-2 px-7 font-semibold rounded-full max-md:w-full max-md:mt-5">
                                                         Apply coupon</button>
@@ -247,7 +199,7 @@
                     </div>
                 </div>
             </main>
-            <?php include "./view/inc/footer.php" ?> 
+            <?php include "./view/inc/footer.php" ?>
         </div>
     </div>
     <script src="./js/main.js"></script>

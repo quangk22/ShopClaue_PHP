@@ -19,16 +19,16 @@
 <body class="font-poppins">
     <div class="warapper">
 
-         <!-- search -->
-    <?php include "./view/inc/search.php" ?>
-    <!-- cart -->
-    <?php include "./view/inc/cart.php" ?>
-    <!--chi tiết sản phẩm -->
-    <?php include "./view/inc/product_description.php" ?>
-    <!-- mobi menu -->
-    <?php include "./view/inc/mobi_menu.php" ?>
+        <!-- search -->
+        <?php include "./view/inc/search.php" ?>
+        <!-- cart -->
+        <?php include "./view/inc/cart.php" ?>
+        <!--chi tiết sản phẩm -->
+        <?php include "./view/inc/product_description.php" ?>
+        <!-- mobi menu -->
+        <?php include "./view/inc/mobi_menu.php" ?>
         <div class="container-wrapper">
-        <?php include "./view/inc/header.php" ?>
+            <?php include "./view/inc/header.php" ?>
             <main>
                 <div class="w-full ">
                     <div class="w-full bg-[#f6f6f8]">
@@ -38,25 +38,35 @@
                                 <li class="ml-1">Men <i
                                         class="fa-solid fa-chevron-right text-[#878787] text-[10px]"></i>
                                 </li>
-                                <li class="ml-1 text-[#878787] detail2" id="nameDetail"><?php echo $_GET["name_product"] ?></li>
+                                <li class="ml-1 text-[#878787] detail2" id="nameDetail">
+                                    <?php echo $_GET["name_product"] ?>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="pt-10 w-[73.125rem] px-5 m-auto max-w-full">
-                        <form method="POST" action="db_order_items.php" class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
+                        <div class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
                             <div class="w-full">
                                 <div class="grid grid-cols-2 grid-rows-2 gap-3">
-                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
-                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
-                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
-                                    <div class="image" id="imgProduct"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img
+                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img
+                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img
+                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
+                                    <div class="image" id="imgProduct"><img
+                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
                                 </div>
                             </div>
                             <div class="pl-8 max-md:pl-0 max-md:pt-3">
                                 <div class="detail">
-                                    <h1 class="text-lg font-semibold mb-1 name" id="nameProduct"><?php echo $_GET["name_product"] ?></h1>
-                                    <div class="text-[#878787] mb-5"><span class="text-[22px] price"
-                                            id="priceProduct">$<?php echo $_GET["price_product"] ?>.000</span></div>
+                                    <h1 class="text-lg font-semibold mb-1 name" id="nameProduct">
+                                        <?php echo $_GET["name_product"] ?>
+                                    </h1>
+                                    <div class="text-[#878787] mb-5"><span class="text-[22px] price" id="priceProduct">
+                                            $
+                                            <?php echo $_GET["price_product"] ?>.000
+                                        </span></div>
                                     <div class="text-[#878787] text-sm mb-5">
                                         <p class="description" id="description"></p>
                                     </div>
@@ -64,22 +74,26 @@
                                         <!--  -->
                                         <div class="flex">
                                             <div class="mr-[10px]">
-                                            <div
-                                              class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
-                                              <input type="number" min="1" value="1" inputmode="none" readonly
-                                                  class="outline-none w-full flex text-center bg-transparent customNumberInput"
-                                                  id="customNumberInput">
-                                              <div
-                                                  class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                  <div class="ml-3 decreaseButton" id="decreaseButton"><i
-                                                          class="fa-solid fa-minus"></i></div>
-                                                  <div class="mr-3 increaseButton" id="increaseButton"><i
-                                                          class="fa-solid fa-plus"></i></div>
-                                              </div>
-                                          </div>
+                                                <div
+                                                    class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
+                                                    <input type="number" min="1" value="1" inputmode="none" readonly
+                                                        class="outline-none w-full flex text-center bg-transparent customNumberInput"
+                                                        id="customNumberInput">
+                                                    <div
+                                                        class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                        <div class="ml-3 decreaseButton" id="decreaseButton"><i
+                                                                class="fa-solid fa-minus"></i></div>
+                                                        <div class="mr-3 increaseButton" id="increaseButton"><i
+                                                                class="fa-solid fa-plus"></i></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="mr-[10px]">
-                                               <a href="#" class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">Add to cart </a>
+                                                <button type="submit"
+                                                    class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
+                                                    onclick="add_cart_item('<?php echo $_GET['product_id']; ?>','<?php echo $_GET['price_product']; ?>',document.getElementById('customNumberInput').value)"  onclick="cart_mini()" id="cart_mini">
+                                                    Add to cart
+                                                </button>
                                             </div>
                                             <div
                                                 class="flex justify-center items-center border border-black rounded-full">
@@ -117,19 +131,27 @@
                                             you purchase 3 products</p>
                                         <div class="flex mb-5">
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
+                                                <div class="image" id="imgProduct2"><img
+                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
+                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                                 <span class="px-1 text-[#878787]">+</span>
                                             </div>
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
+                                                <div class="image" id="imgProduct2"><img
+                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
+                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                                 <span class="px-1 text-[#878787]">+</span>
                                             </div>
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
+                                                <div class="image" id="imgProduct2"><img
+                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
+                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                                 <span class="px-1 text-[#878787]">+</span>
                                             </div>
                                             <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img src="./media/img/<?php echo $_GET["image_product"];?>.jpg" alt="" class=" w-[70px] h-[70px] object-cover"></div>
+                                                <div class="image" id="imgProduct2"><img
+                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
+                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
                                             </div>
                                         </div>
                                         <div class="list-select">
@@ -193,7 +215,7 @@
                                     <div class="listProduct"></div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                         <!--  -->
                         <div class="pt-[50px] pb-[20px]">
                             <div class="">
@@ -944,7 +966,7 @@
                     </div>
                 </div>
             </main>
-        <?php include "./view/inc/footer.php" ?>
+            <?php include "./view/inc/footer.php" ?>
         </div>
     </div>
     <script src="../public/js/main.js"></script>

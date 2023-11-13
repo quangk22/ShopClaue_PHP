@@ -4,7 +4,9 @@ $pdo = get_pdo();
 function get_all_order_items(){
     global $pdo;
 
-    $sql = "SELECT * FROM ORDER_ITEMS";
+    $sql = "SELECT image,name,order_items.price, order_items.quantity,order_items.id
+    FROM order_items,products
+    WHERE order_items.product_id = products.id;";
     $stmt = $pdo->prepare($sql);
     
 
@@ -17,11 +19,11 @@ function get_all_order_items(){
     $order_items_list = array();
 
     // Lặp kết quả
-    foreach ($result as $row){
-        $order_items= array(
+    foreach ($result as $row) {
+        $order_items = array(
             'id' => $row['id'],
-            'order_id' => $row['order_id'],
-            'product_id' => $row['product_id'],
+            'image' => $row['image'],
+            'name' => $row['name'],
             'quantity' => $row['quantity'],
             'price' => $row['price']
         );

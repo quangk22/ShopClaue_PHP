@@ -20,12 +20,12 @@
     <div class="warapper relative ">
         <!-- search -->
         <?php include "./view/inc/search.php" ?>
-    <!-- cart -->
-    <?php include "./view/inc/cart.php" ?>
-    <!--chi tiết sản phẩm -->
-    <?php include "./view/inc/product_description.php" ?>
-    <!-- mobi menu -->
-    <?php include "./view/inc/mobi_menu.php" ?>
+        <!-- cart -->
+        <?php include "./view/inc/cart.php" ?>
+        <!--chi tiết sản phẩm -->
+        <?php include "./view/inc/product_description.php" ?>
+        <!-- mobi menu -->
+        <?php include "./view/inc/mobi_menu.php" ?>
         <div class="container-wrapper ">
             <?php include "./view/inc/header.php" ?>
             <main class="">
@@ -92,8 +92,10 @@
                                         <input type="text" name=""
                                             class="w-[49%] outline-none border py-2 border-black px-4 mr-7 max-sm:w-full"
                                             placeholder="Coupon code" id="" value="">
-                                        <button type="submit" class="text-black border-2 border-black rounded-full  px-7 py-2 text-sm font-semibold hover:bg-[#56cfe1] hover:border-[#56cfe1]
-                                            hover:text-white max-sm:flex max-sm:justify-center max-sm:items-center max-sm:mt-4" name="" value="">Apply coupon</button>
+                                        <button type="submit"
+                                            class="text-black border-2 border-black rounded-full  px-7 py-2 text-sm font-semibold hover:bg-[#56cfe1] hover:border-[#56cfe1]
+                                            hover:text-white max-sm:flex max-sm:justify-center max-sm:items-center max-sm:mt-4" name=""
+                                            value="">Apply coupon</button>
                                     </div>
                                 </div>
                             </form>
@@ -185,38 +187,42 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody class="w-full border-b">
-                                                    <tr class="cart_item w-full">
-                                                        <td class="p-4 w-[80px]">
-                                                            <img src="./media/img/ck-1.jpg" alt="" class="w-[80px]">
-                                                        </td>
-                                                        <td class="item-name p-4">
-                                                            Calvin Klein Logo Sweatpants&nbsp; <strong class="">×
-                                                                1</strong>
-                                                            <ul class=""></ul>
-                                                        </td>
-                                                        <td class="product-total p-4 text-end">
-                                                            <span class=""><bdi><span
-                                                                        class="">$</span>35.00</bdi></span>
-                                                        </td>
-                                                    </tr>
+                                                    <?php foreach ($itemsList as $key => $items_list) { ?>
+                                                        <tr class="cart_item w-full">
+                                                            <td class="p-4 w-[80px]">
+                                                                <img src="./media/img/<?php echo $items_list['image'] ?>.jpg"
+                                                                    alt="" class="w-[80px]">
+                                                            </td>
+                                                            <td class="item-name p-4">
+                                                                <?php echo $items_list['name'] ?>&nbsp; <strong class="">×
+                                                                    1</strong>
+                                                                <ul class=""></ul>
+                                                            </td>
+                                                            <td class="product-total p-4 text-end">
+                                                                <span class=""><bdi><span class="">$</span>
+                                                                        <?php echo $items_list['price'] ?>.000
+                                                                    </bdi></span>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 </tbody>
                                                 <tfoot class="">
                                                     <tr class="border-b">
                                                         <th class="p-4 text-start text-black">Subtotal</th>
-                                                        <td  class="p-4 text-end" colspan="2">
+                                                        <td class="p-4 text-end" colspan="2">
                                                             <bdi><span class="">$</span>35.00</bdi>
                                                         </td>
                                                     </tr>
                                                     <tr class="border-b">
-                                                        <th  class="p-4 text-start text-black">Shipping</th>
-                                                        <td  class="p-4 text-end" colspan="2">
+                                                        <th class="p-4 text-start text-black">Shipping</th>
+                                                        <td class="p-4 text-end" colspan="2">
                                                             <span>Local Pickup:</span>
                                                             <bdi><span class="">$</span>15.00</bdi>
                                                         </td>
                                                     </tr>
                                                     <tr class="border-b">
-                                                        <th  class="p-4 text-start text-black">Total</th>
-                                                        <td  class="p-4 text-end" colspan="2">
+                                                        <th class="p-4 text-start text-black">Total</th>
+                                                        <td class="p-4 text-end" colspan="2">
                                                             <strong>
                                                                 <span class="text-black">
                                                                     <bdi><span class="">$</span>50.00</bdi>
@@ -234,19 +240,24 @@
                                                     </li>
                                                     <li class="mb-5">
                                                         <input type="checkbox">
-                                                        <span>Cash on delivery</span> 
+                                                        <span>Cash on delivery</span>
                                                     </li>
                                                     <li class="flex items-center flex-wrap">
                                                         <input type="checkbox">
                                                         <label for="" class="flex items-center ml-1 ">
                                                             <span>PayPal </span>
-                                                            <img src="./media/img/AM_mc_vs_dc_ae.jpg" alt="" class="h-12 ml-2">
+                                                            <img src="./media/img/AM_mc_vs_dc_ae.jpg" alt=""
+                                                                class="h-12 ml-2">
                                                             <a href="#" class="text-black">what is PayPal ?</a>
                                                         </label>
                                                         <div class="bg-[#f1f1f1] mt-3 relative">
-                                                            <p class="p-5 before:content-[''] before:bg-[#f1f1f1] before:w-4 before:h-4 before:absolute before:top-[-8px] before:rotate-45 text-sm">
-                                                                Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account. SANDBOX ENABLED. You can use sandbox testing accounts only. See the
-                                                                <a href="" class="text-black">PayPal Sandbox Testing Guide</a>  for more details.
+                                                            <p
+                                                                class="p-5 before:content-[''] before:bg-[#f1f1f1] before:w-4 before:h-4 before:absolute before:top-[-8px] before:rotate-45 text-sm">
+                                                                Pay via PayPal; you can pay with your credit card if you
+                                                                don’t have a PayPal account. SANDBOX ENABLED. You can
+                                                                use sandbox testing accounts only. See the
+                                                                <a href="" class="text-black">PayPal Sandbox Testing
+                                                                    Guide</a> for more details.
                                                             </p>
                                                         </div>
                                                     </li>
@@ -254,11 +265,13 @@
                                                 <div class="p-4">
                                                     <div class="flex items-center mb-8">
                                                         <input type="checkbox" class="mr-1">
-                                                        <span>I have read and agree to the website 
+                                                        <span>I have read and agree to the website
                                                             <a href="" class="text-black"> terms and conditions</a>
                                                         </span>
                                                     </div>
-                                                    <button class="text-black border-2 border-black rounded-full px-9 py-2 font-semibold hover:bg-[#56cfe1] hover:border-[#56cfe1] hover:text-white">Proceed to PayPal</button>
+                                                    <button
+                                                        class="text-black border-2 border-black rounded-full px-9 py-2 font-semibold hover:bg-[#56cfe1] hover:border-[#56cfe1] hover:text-white">Proceed
+                                                        to PayPal</button>
                                                 </div>
                                             </div>
                                         </div>

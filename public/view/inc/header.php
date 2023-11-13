@@ -349,7 +349,7 @@
                   </li>
     
                   <!-- Shop-Bag -->
-                  <li id="show_cart">
+                  <li onclick="cart_mini()" class="show-cart-btn">
                     <div class="flex items-center space-x-4 relative">
                       <a href="#"
                         class="text-center text-[#222]  before:content-['2'] before:text-white before:text-xs

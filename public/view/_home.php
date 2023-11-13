@@ -226,7 +226,7 @@
                           <div class="block max-lg:block">
                             <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i>
                             </div>
-                            <div class=" lg:hidden  max-md:block "><i class="fa-solid fa-eye fa-lg text-white"
+                            <div class=" lg:hidden  max-md:block "  onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')"><i class="fa-solid fa-eye fa-lg text-white"
                                 data-product-id="1"></i></div>
                           </div>
                         </a>
@@ -335,7 +335,7 @@
                       <div class="block max-lg:block">
                         <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i>
                         </div>
-                        <div class=" lg:hidden  max-md:block "><i class="fa-solid fa-eye fa-lg text-white"></i></div>
+                        <div class=" lg:hidden  max-md:block "  onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')"><i class="fa-solid fa-eye fa-lg text-white quickShop"></i></div>
                       </div>
                     </a>
                   </div>

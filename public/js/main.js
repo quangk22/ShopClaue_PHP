@@ -44,30 +44,30 @@ window.addEventListener('scroll', function () {
 // Lấy tham chiếu đến phần tử <input> và các nút
 document.addEventListener("DOMContentLoaded", function () {
     // Đặt mã JavaScript ở đây
-const numberInput = document.querySelector('.customNumberInput');
-const decreaseButton = document.querySelector('.decreaseButton');
-const increaseButton = document.querySelector('.increaseButton');
+    const numberInput = document.querySelector('.customNumberInput');
+    const decreaseButton = document.querySelector('.decreaseButton');
+    const increaseButton = document.querySelector('.increaseButton');
 
-let currentValue = 1; // Giá trị ban đầu
+    let currentValue = 1; // Giá trị ban đầu
 
-// Xử lý sự kiện khi nút "-" được nhấn
-if (decreaseButton) {
-    decreaseButton.addEventListener('click', function () {
-        if (currentValue) {
-            currentValue--;
+    // Xử lý sự kiện khi nút "-" được nhấn
+    if (decreaseButton) {
+        decreaseButton.addEventListener('click', function () {
+            if (currentValue) {
+                currentValue--;
+                numberInput.value = currentValue;
+            }
+
+        });
+    }
+
+    // Xử lý sự kiện khi nút "+" được nhấn
+    if (increaseButton) {
+        increaseButton.addEventListener('click', function () {
+            currentValue++;
             numberInput.value = currentValue;
-        }
-        
-    });
-}
-
-// Xử lý sự kiện khi nút "+" được nhấn
-if (increaseButton) {
-    increaseButton.addEventListener('click', function () {
-        currentValue++;
-        numberInput.value = currentValue;
-    });
-}
+        });
+    }
 });
 // 
 const btnDescription = document.getElementById("btn-description");
@@ -154,30 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 // cart
-const btnCart = document.getElementById('show_cart');
-const showCart = document.getElementById('cart_mini');
-const cart_mini = document.getElementById('cart_mini2');
-const closeCart = document.getElementById('close_cart');
 
-btnCart.addEventListener('click', function () {
-    showCart.classList.remove('hidden');
-
-    // Sử dụng setTimeout để thiết lập transition sau khi element đã được hiển thị
-    setTimeout(function () {
-        cart_mini.style.transform = 'translateX(0)';
-        cart_mini.style.transition = 'transform 500ms ease-in-out';
-    }, 0);
-});
-
-closeCart.addEventListener('click', function () {
-    cart_mini.style.transform = 'translateX(320px)';
-    cart_mini.style.transition = 'transform 500ms ease-in';
-
-    // Sử dụng setTimeout để ẩn element sau khi transition hoàn thành
-    setTimeout(function () {
-        showCart.classList.add('hidden');
-    }, 500);
-});
 // search
 const openFormButton = document.getElementById('openForm');
 const closeFormButton = document.getElementById('closeForm');
@@ -199,51 +176,51 @@ let slideIndex2 = 1;
 let startX = null;
 
 function showSlides2(n) {
-  const slides = document.querySelectorAll(".slideshow-image");
+    const slides = document.querySelectorAll(".slideshow-image");
 
-  if (n > slides.length) {
-    slideIndex2 = 1;
-  }
-  if (n < 1) {
-    slideIndex2 = slides.length;
-  }
+    if (n > slides.length) {
+        slideIndex2 = 1;
+    }
+    if (n < 1) {
+        slideIndex2 = slides.length;
+    }
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
 
-  if (slides.length > 0) {
-    slides[slideIndex2 - 1].style.display = "block";
-  }
+    if (slides.length > 0) {
+        slides[slideIndex2 - 1].style.display = "block";
+    }
 }
 
 function prevSlide2() {
-  showSlides2(slideIndex2 -= 1);
+    showSlides2(slideIndex2 -= 1);
 }
 
 function nextSlide2() {
-  showSlides2(slideIndex2 += 1);
+    showSlides2(slideIndex2 += 1);
 }
 
 function touchStart(event) {
-  startX = event.touches[0].clientX;
+    startX = event.touches[0].clientX;
 }
 
 function touchEnd(event) {
-  if (startX === null) {
-    return;
-  }
+    if (startX === null) {
+        return;
+    }
 
-  const endX = event.changedTouches[0].clientX;
-  const deltaX = startX - endX;
+    const endX = event.changedTouches[0].clientX;
+    const deltaX = startX - endX;
 
-  if (deltaX > 50) {
-    nextSlide2();
-  } else if (deltaX < -50) {
-    prevSlide2();
-  }
+    if (deltaX > 50) {
+        nextSlide2();
+    } else if (deltaX < -50) {
+        prevSlide2();
+    }
 
-  startX = null;
+    startX = null;
 }
 
 // document.querySelector(".slideshow-container").addEventListener("touchstart", touchStart);
@@ -269,14 +246,14 @@ const btn_show_login = document.getElementById("show-formLogin");
 const form_Login = document.getElementById("form-login");
 
 if (btn_show_login) {
-    btn_show_login.addEventListener('click', function(){
+    btn_show_login.addEventListener('click', function () {
         form_Login.classList.toggle("hidden");
     });
 }
 const btn_show_code = document.getElementById("show-fromCode");
 const form_code = document.getElementById("form-code");
 if (btn_show_code) {
-    btn_show_code.addEventListener('click', function(){
+    btn_show_code.addEventListener('click', function () {
         form_code.classList.toggle("hidden");
     });
 }
@@ -285,7 +262,7 @@ const btn_mobi = document.getElementById("show-mobi");
 const menu_mobi = document.getElementById("menu-mobi");
 const close_mobi = document.getElementById("close_mobi");
 const mobi = document.getElementById("mobi");
-btn_mobi.addEventListener('click', function(){
+btn_mobi.addEventListener('click', function () {
     menu_mobi.classList.remove('hidden');
     setTimeout(function () {
         mobi.style.transform = 'translateX(0)';
@@ -294,35 +271,105 @@ btn_mobi.addEventListener('click', function(){
 
 });
 if (close_mobi) {
-    close_mobi.addEventListener('click', function(){
+    close_mobi.addEventListener('click', function () {
         mobi.style.transform = 'translateX(-320px)';
-         mobi.style.transition = 'transform 500ms ease-in';
+        mobi.style.transition = 'transform 500ms ease-in';
 
-    // Sử dụng setTimeout để ẩn element sau khi transition hoàn thành
-    setTimeout(function () {
-        menu_mobi.classList.add('hidden');
-    }, 500);
+        // Sử dụng setTimeout để ẩn element sau khi transition hoàn thành
+        setTimeout(function () {
+            menu_mobi.classList.add('hidden');
+        }, 500);
     });
 }
+function reloadCartContent() {
+    // Thực hiện các thao tác cần thiết để tải lại nội dung giỏ hàng
+    console.log('Cart content reloaded.');
+    // Điều này có thể bao gồm việc gửi yêu cầu AJAX để cập nhật nội dung từ máy chủ
+}
+let isHidden = false; 
+function cart_mini() {
+    const showCart = document.getElementById('cart_mini');
+    const cart_mini = document.getElementById('cart_mini2');
+    
+    showCart.classList.remove('hidden');
+    reloadCartContent();
+    setTimeout(function () {
+        cart_mini.style.transform = 'translateX(0)';
+        cart_mini.style.transition = 'transform 500ms ease-in-out';
+        if (!isHidden) {
+            reloadCartContent();
+        }
+    }, 0);
+    
+
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const showCartButtons = document.querySelectorAll('.show-cart-btn');
+
+    showCartButtons.forEach(function (button) {
+        button.addEventListener('click', cart_mini);
+    });
+});
+
+const closeCart = document.getElementById('close_cart');
+closeCart.addEventListener('click', function () {
+    const cart_mini = document.getElementById('cart_mini2');
+    const showCart = document.getElementById('cart_mini');
+    cart_mini.style.transform = 'translateX(320px)';
+    cart_mini.style.transition = 'transform 500ms ease-in';
+
+    setTimeout(function () {
+        if (showCart) {
+            showCart.classList.add('hidden');
+        }
+        reloadCartContent();
+    }, 500);
+});
 // -----------------------------------
-function quickShop(image,name,price){
+function quickShop(image, name, price) {
     var imageProduct = document.getElementById('imageProduct');
     var nameProduct = document.getElementById('nameProduct');
     var priceProduct = document.getElementById('priceProduct');
 
-    imageProduct.src= "../public/media/img/"+ image + ".jpg";
+    imageProduct.src = "../public/media/img/" + image + ".jpg";
     nameProduct.innerHTML = name;
-    priceProduct.innerHTML = '$'+price +'.000' ;
+    priceProduct.innerHTML = '$' + price + '.000';
     console.log("da lay");
     zoom();
-    
+
 }
-function zoom(){
+function zoom() {
     const MotaSP = document.getElementById('MotaSP');
     MotaSP.classList.remove('hidden');
-    
+
 }
-function close_detail(){
+function close_detail() {
     const MotaSP = document.getElementById('MotaSP');
     MotaSP.classList.add('hidden');
+    console.log("đã click");
+}
+
+
+function add_cart_item(product_id, price, customNumberInput) {
+    console.log(product_id);
+    var formData = new FormData();
+    formData.append("id", product_id);
+    formData.append("price", price);
+    formData.append("quantity", customNumberInput);
+
+    fetch("../core/db/insert_cart.php", {
+        method: "POST",
+        body: formData,
+    });
+    cart_mini();
+
+}
+function delete_items(item_id) {
+    var formData = new FormData();
+    formData.append("item_id", item_id);
+    fetch("../core/db/insert_cart.php", {
+        method: "POST",
+        body: formData,
+    });
 }

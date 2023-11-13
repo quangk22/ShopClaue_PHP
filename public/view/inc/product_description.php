@@ -3,7 +3,7 @@
         <div class="w-[800px] bg-white h-[90vh] max-md:w-full max-md:h-full max-md:overflow-auto relative">
             <button
                 class="flex justify-end items-center p-5 absolute right-0 hover:rotate-180 transition-all ease-in duration-200 z-40"
-                id="close-detail" >
+                id="close-detail">
                 <i class="fa-solid fa-x" onclick="close_detail()"></i>
             </button>
             <div class="grid grid-cols-2 gap-5 max-md:block w-full">
@@ -13,8 +13,7 @@
                     <!-- Slideshow Container -->
                     <div class="slideshow-item w-full m-auto h-[90vh] " ontouchstart="touchStart(event)">
                         <div class="slideshow-image h-full">
-                            <img src="" alt="" loading="lazy "
-                                id="imageProduct" class="w-full h-[90vh]">
+                            <img src="" alt="" loading="lazy " id="imageProduct" class="w-full h-[90vh]">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
                             <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy" class="w-full h-[90vh]">
@@ -59,7 +58,7 @@
                                     </div>
                                     <div class="mr-[10px]">
                                         <button
-                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">Add
+                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"     onclick="cart_mini()">Add
                                             to cart</button>
                                     </div>
                                     <div class="flex justify-center items-center border border-black rounded-full">
