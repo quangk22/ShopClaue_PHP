@@ -283,11 +283,13 @@ if (close_mobi) {
 }
 function reloadCartContent() {
     // Thực hiện các thao tác cần thiết để tải lại nội dung giỏ hàng
-    console.log('Cart content reloaded.');
+    console.log('Đã cập nhật giỏ hàng.');
     // Điều này có thể bao gồm việc gửi yêu cầu AJAX để cập nhật nội dung từ máy chủ
+    
 }
 let isHidden = false; 
 function cart_mini() {
+    console.log("đã hiện giỏ hàng");
     const showCart = document.getElementById('cart_mini');
     const cart_mini = document.getElementById('cart_mini2');
     
@@ -341,8 +343,13 @@ function quickShop(image, name, price) {
 }
 function zoom() {
     const MotaSP = document.getElementById('MotaSP');
+    const detail = document.getElementById('detail');
     MotaSP.classList.remove('hidden');
-
+    detail.style.transition = 'transform 400ms ease-in';
+    detail.style.transform  = 'scale(0.1)';
+    setTimeout(function () {
+        detail.style.transform  = 'scale(1)';
+    }, 1);
 }
 function close_detail() {
     const MotaSP = document.getElementById('MotaSP');
@@ -372,4 +379,5 @@ function delete_items(item_id) {
         method: "POST",
         body: formData,
     });
+    reloadCartContent();
 }

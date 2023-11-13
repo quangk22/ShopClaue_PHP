@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../public/css/output.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="shortcut icon" type="image/png" href="../public/media/img/desktop2.png" class="tab-icon">
   <style>
     ::-webkit-scrollbar {
@@ -226,8 +227,9 @@
                           <div class="block max-lg:block">
                             <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i>
                             </div>
-                            <div class=" lg:hidden  max-md:block "  onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')"><i class="fa-solid fa-eye fa-lg text-white"
-                                data-product-id="1"></i></div>
+                            <div class=" lg:hidden  max-md:block "
+                              onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')">
+                              <i class="fa-solid fa-eye fa-lg text-white" data-product-id="1"></i></div>
                           </div>
                         </a>
                       </div>
@@ -240,7 +242,8 @@
                         </div>
                         <div
                           class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
-                          onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')"> Quick Shop
+                          onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')">
+                          Quick Shop
                         </div>
                       </div>
                     </div>
@@ -251,14 +254,13 @@
                           <?php echo $productList[$i]['name']; ?>
                         </a>
                       </h3>
-                      <span class="text-[#696969]"> $
-                        <?php
+                      <span class="text-[#696969]">
+                        $<?php
                         $discount = 30;
                         $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);
                         echo $discountedPrice ?>.000
                         -
-                        $
-                        <?php echo $productList[$i]['price']; ?>.000
+                        $<?php echo $productList[$i]['price']; ?>.000
                       </span>
                     </div>
                   </div>
@@ -335,7 +337,9 @@
                       <div class="block max-lg:block">
                         <div class="max-lg:block"><i class="fa-regular fa-heart fa-lg text-white "></i>
                         </div>
-                        <div class=" lg:hidden  max-md:block "  onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')"><i class="fa-solid fa-eye fa-lg text-white quickShop"></i></div>
+                        <div class=" lg:hidden  max-md:block "
+                          onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')">
+                          <i class="fa-solid fa-eye fa-lg text-white quickShop"></i></div>
                       </div>
                     </a>
                   </div>
@@ -360,14 +364,14 @@
                       <?php echo $productList[$i]['name']; ?>
                     </a>
                   </h3>
-                  <span class="text-[#696969]"> $
-                    <?php
+                  <span class="text-[#696969]"> 
+                  $<?php
                     $discount = 30;
                     $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);
                     echo $discountedPrice ?>.000
                     -
-                    $
-                    <?php echo $productList[$i]['price']; ?>.000
+                    
+                    $<?php echo $productList[$i]['price']; ?>.000
                   </span>
                 </div>
               </div>

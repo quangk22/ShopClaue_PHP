@@ -1,10 +1,10 @@
-<div class="bg-[rgba(0,0,0,.8)] w-full h-full fixed z-50 hidden" id="MotaSP">
-    <div class="flex justify-center items-center  w-full h-full detail">
+<div class="bg-[rgba(0,0,0,.8)] w-full h-full fixed z-50 hidden " id="MotaSP">
+    <div class="flex justify-center items-center  w-full h-full scale-50  " id="detail">
         <div class="w-[800px] bg-white h-[90vh] max-md:w-full max-md:h-full max-md:overflow-auto relative">
             <button
-                class="flex justify-end items-center p-5 absolute right-0 hover:rotate-180 transition-all ease-in duration-200 z-40"
-                id="close-detail">
-                <i class="fa-solid fa-x" onclick="close_detail()"></i>
+                class="flex justify-end items-center p-5 absolute right-0 hover:rotate-180 transition-all ease-in duration-200 z-40 hover:text-red-600"
+                id="close-detail" onclick="close_detail()">
+                <i class="fa-solid fa-x" ></i>
             </button>
             <div class="grid grid-cols-2 gap-5 max-md:block w-full">
                 <div class="img h-[90vh] relative overflow-hidden group max-md:w-auto w-full">
@@ -13,16 +13,16 @@
                     <!-- Slideshow Container -->
                     <div class="slideshow-item w-full m-auto h-[90vh] " ontouchstart="touchStart(event)">
                         <div class="slideshow-image h-full">
-                            <img src="" alt="" loading="lazy " id="imageProduct" class="w-full h-[90vh]">
+                            <img src="" alt="" loading="lazy " id="imageProduct" class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy" class="w-full h-[90vh]">
+                            <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy" class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-3.jpg" alt="" loading="lazy" class="w-full h-[90vh]">
+                            <img src="../public/media/img/ck-3.jpg" alt="" loading="lazy" class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-4.jpg" alt="" loading="lazy" class="w-full h-[90vh]">
+                            <img src="../public/media/img/ck-4.jpg" alt="" loading="lazy" class="w-full h-[90vh] object-cover">
                         </div>
                     </div>
                     <button class="absolute top-1/2 right-8 border-black border rounded-full p-2 px-3.5 w-[38px] h-[38px] flex justify-center items-center opacity-0  group-hover:opacity-100 transition-all ease-out duration-300 hover:bg-[#56cfe1] hover:text-white hover:border-[#56cfe1]
@@ -96,22 +96,22 @@
                                 <div class="flex mb-5">
                                     <div class="flex justify-center items-center">
                                         <img src="../public/media/img/ck-1-270x270.jpg" alt="" loading="lazy"
-                                            class="w-[70px] h-[70px]">
+                                            class="w-[70px] h-[70px] object-cover">
                                         <span class="px-1 text-[#878787]">+</span>
                                     </div>
                                     <div class="flex justify-center items-center">
                                         <img src="../public/media/img/p2-5-270x270.jpg" alt="" loading="lazy"
-                                            class="w-[70px] h-[70px]">
+                                            class="w-[70px] h-[70px] object-cover">
                                         <span class="px-1 text-[#878787]">+</span>
                                     </div>
                                     <div class="flex justify-center items-center">
                                         <img src="../public/media/img/p10-1-300x383.jpg" alt="" loading="lazy"
-                                            class="w-[70px] h-[70px]">
+                                            class="w-[70px] h-[70px] object-cover">
                                         <span class="px-1 text-[#878787]">+</span>
                                     </div>
                                     <div class="flex justify-center items-center">
                                         <img src="../public/media/img/p1-2-300x383.jpg " alt="" loading="lazy"
-                                            class="w-[70px] h-[70px]">
+                                            class="w-[70px] h-[70px] object-cover">
                                     </div>
                                 </div>
                                 <div class="list-select">
