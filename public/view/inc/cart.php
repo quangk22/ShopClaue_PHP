@@ -8,9 +8,9 @@
         </div>
         <div class="p-5">
             <div class="h-full ">
-                <ul class="overflow-y-auto h-auto max-h-[24rem]">
+                <ul class="overflow-y-auto h-auto max-h-[24rem] container_cart">
                     <?php foreach ($itemsList as $key => $items_list) { ?>
-                        <li class="flex mt-3">
+                        <li class="flex mt-3 item_cart">
                             <a href="#" class="flex text-[13px] relative">
                                 
                                 <div

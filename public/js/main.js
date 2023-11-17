@@ -285,14 +285,14 @@ function reloadCartContent() {
     // Thực hiện các thao tác cần thiết để tải lại nội dung giỏ hàng
     console.log('Đã cập nhật giỏ hàng.');
     // Điều này có thể bao gồm việc gửi yêu cầu AJAX để cập nhật nội dung từ máy chủ
-    
+
 }
-let isHidden = false; 
+let isHidden = false;
 function cart_mini() {
     console.log("đã hiện giỏ hàng");
     const showCart = document.getElementById('cart_mini');
     const cart_mini = document.getElementById('cart_mini2');
-    
+
     showCart.classList.remove('hidden');
     reloadCartContent();
     setTimeout(function () {
@@ -302,7 +302,7 @@ function cart_mini() {
             reloadCartContent();
         }
     }, 0);
-    
+
 
 }
 
@@ -346,9 +346,9 @@ function zoom() {
     const detail = document.getElementById('detail');
     MotaSP.classList.remove('hidden');
     detail.style.transition = 'transform 400ms ease-in';
-    detail.style.transform  = 'scale(0.1)';
+    detail.style.transform = 'scale(0.1)';
     setTimeout(function () {
-        detail.style.transform  = 'scale(1)';
+        detail.style.transform = 'scale(1)';
     }, 1);
 }
 function close_detail() {
@@ -358,18 +358,47 @@ function close_detail() {
 }
 
 
-function add_cart_item(product_id, price, customNumberInput) {
-    console.log(product_id);
+function add_cart_item(id, price, quantity,image,name) {
     var formData = new FormData();
-    formData.append("id", product_id);
+    formData.append("id", id);
     formData.append("price", price);
-    formData.append("quantity", customNumberInput);
+    formData.append("quantity", quantity);
 
     fetch("../core/db/insert_cart.php", {
         method: "POST",
         body: formData,
     });
     cart_mini();
+    var cart = document.querySelector('.container_cart');
+    var new_item = document.createElement("li");
+    new_item.className = "flex mt-3";
+    new_item.innerHTML = `
+    <li class="flex mt-3">
+                            <a href="#" class="flex text-[13px] relative">
+                                
+                                <div
+                                    class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:" onclick="delete_items( <?php echo $items_list['id'] ?>)">
+                                    <img src="./media/img/${image}.jpg" alt="" loading="lazy" class="w-[70px] mr-2 ">
+                                </div>
+
+                                <span class="block whitespace-nowrap">
+                                    <h1 class="text-sm font-poppins">
+                                    ${name}
+                                    </h1>
+                                    <span class="flex text-xs text-[#878787]">
+                                        <span>
+                                            <span>1</span>
+                                            x
+                                            <span>$
+                                            `+ price+`.00
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+    `;
+    cart.appendChild(new_item);
 
 }
 function delete_items(item_id) {

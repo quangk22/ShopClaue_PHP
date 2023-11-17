@@ -92,7 +92,7 @@
                                             <div class="mr-[10px]">
                                                 <button type="submit"
                                                     class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
-                                                    onclick="add_cart_item('<?php echo $_GET['product_id']; ?>','<?php echo $_GET['price_product']; ?>',document.getElementById('customNumberInput').value)"  onclick="cart_mini()" id="cart_mini">
+                                                    onclick="add_cart_item('<?php echo $_GET['product_id']; ?>', '<?php echo $_GET['price_product']; ?>', document.getElementById('customNumberInput').value, '<?php echo $_GET['image_product']; ?>', '<?php echo $_GET['name_product']; ?>'); cart_mini();" id="cart_mini">
                                                     Add to cart
                                                 </button>
                                             </div>
