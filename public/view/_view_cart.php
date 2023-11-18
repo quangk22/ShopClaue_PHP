@@ -156,7 +156,11 @@
                                             <tr class="border-b ">
                                                 <th class="text-left p-4">Subtotal</th>
                                                 <td data-title="Subtotal" class="text-end p-4">
-                                                    <span class=""><bdi><span class="">$</span>130.00</bdi></span>
+                                                    <span class=""><bdi>
+                                                    <?php foreach ($total as $key => $total2) { ?>
+                                                                            $<?php echo $total2['total'] ?>.000
+                                                                        <?php } ?>
+                                                    </span>
                                                 </td>
                                             </tr>
                                             <tr class="border-b text-sm">
@@ -185,13 +189,18 @@
                                                 <th class="text-left p-4">Total</th>
                                                 <td data-title="Total" class="text-end p-4">
                                                     <strong>
-                                                        <span class=""><bdi><span class="">$</span>145.00</bdi></span>
+                                                        <span class=""><bdi><span class=""></span>
+                                                                <?php foreach ($total as $key => $total2) { ?>
+                                                                    $<?php echo  $total2['total'] ?>.000
+                                                                <?php } ?>
+
+                                                            </bdi></span>
                                                     </strong>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <a href="../public/CheckOut.html">
+                                    <a href="check_out.php">
                                         <button class="w-full bg-black text-white  rounded-full mt-5 p-3 uppercase font-bold text-sm
                                     hover:bg-[#56CFE1] "> Proceed to checkout</button></a>
                                 </div>

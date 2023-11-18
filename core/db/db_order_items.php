@@ -98,4 +98,30 @@ function update_order_items($order_items){
     
     $stmt->execute();
 }
+function get_all_total(){
+    global $pdo;
+
+    $sql = "SELECT SUM(price * quantity) as total
+    FROM order_items;";
+    $stmt = $pdo->prepare($sql);
+    
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+     
+    $orders_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $orders = array(
+            'total' => $row['total'],
+        );
+        array_push($orders_list, $orders);
+    }
+    
+    return $orders_list;
+}
 ?>

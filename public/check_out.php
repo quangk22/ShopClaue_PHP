@@ -7,6 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $productList = get_all_products();
     $itemsList = get_all_order_items();
+    $total = get_all_total();
     include_once './view/_check_out.php'; 
 }
 ?>

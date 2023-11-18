@@ -12,10 +12,11 @@
                     <?php foreach ($itemsList as $key => $items_list) { ?>
                         <li class="flex mt-3 item_cart">
                             <a href="#" class="flex text-[13px] relative">
-                                
-                                <div
-                                    class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:" onclick="delete_items( <?php echo $items_list['id'] ?>)">
-                                    <img src="./media/img/<?php echo $items_list['image'] ?>.jpg" alt="" loading="lazy" class="w-[70px] mr-2 ">
+
+                                <div class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:"
+                                    onclick="delete_items( <?php echo $items_list['id'] ?>)">
+                                    <img src="./media/img/<?php echo $items_list['image'] ?>.jpg" alt="" loading="lazy"
+                                        class="w-[70px] mr-2 ">
                                 </div>
 
                                 <span class="block whitespace-nowrap">
@@ -39,7 +40,11 @@
             </div>
             <div class="flex justify-between items-center my-5 text-lg">
                 <p class="font-bold">Subtotal:</p>
-                <span>$80.00</span>
+                <span>
+                    <?php foreach ($total as $key => $total2) { ?>
+                        $<?php echo $total2['total'] ?>.000
+                    <?php } ?>
+                </span>
             </div>
             <div class="flex justify-center items-center w-full">
                 <div class="w-full text-white text-sm">

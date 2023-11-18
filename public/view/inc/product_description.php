@@ -4,7 +4,7 @@
             <button
                 class="flex justify-end items-center p-5 absolute right-0 hover:rotate-180 transition-all ease-in duration-200 z-40 hover:text-red-600"
                 id="close-detail" onclick="close_detail()">
-                <i class="fa-solid fa-x" ></i>
+                <i class="fa-solid fa-x"></i>
             </button>
             <div class="grid grid-cols-2 gap-5 max-md:block w-full">
                 <div class="img h-[90vh] relative overflow-hidden group max-md:w-auto w-full">
@@ -16,13 +16,16 @@
                             <img src="" alt="" loading="lazy " id="imageProduct" class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy" class="w-full h-[90vh] object-cover">
+                            <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy"
+                                class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-3.jpg" alt="" loading="lazy" class="w-full h-[90vh] object-cover">
+                            <img src="../public/media/img/ck-3.jpg" alt="" loading="lazy"
+                                class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-4.jpg" alt="" loading="lazy" class="w-full h-[90vh] object-cover">
+                            <img src="../public/media/img/ck-4.jpg" alt="" loading="lazy"
+                                class="w-full h-[90vh] object-cover">
                         </div>
                     </div>
                     <button class="absolute top-1/2 right-8 border-black border rounded-full p-2 px-3.5 w-[38px] h-[38px] flex justify-center items-center opacity-0  group-hover:opacity-100 transition-all ease-out duration-300 hover:bg-[#56cfe1] hover:text-white hover:border-[#56cfe1]
@@ -58,8 +61,10 @@
                                     </div>
                                     <div class="mr-[10px]">
                                         <button
-                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"     onclick="cart_mini()">Add
-                                            to cart</button>
+                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
+                                            onclick="cart_mini()">
+                                            <a href="">Add to cart</a>
+                                        </button>
                                     </div>
                                     <div class="flex justify-center items-center border border-black rounded-full">
                                         <i class="fa-regular fa-heart p-3"></i>

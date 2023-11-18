@@ -211,14 +211,18 @@
                                                     <tr class="border-b">
                                                         <th class="p-4 text-start text-black">Subtotal</th>
                                                         <td class="p-4 text-end" colspan="2">
-                                                            <bdi><span class="">$</span>35.00</bdi>
+                                                            <bdi>
+                                                            <?php foreach ($total as $key => $total2) { ?>
+                                                                            $<?php echo $total2['total'] ?>.000
+                                                                        <?php } ?>
+                                                            </bdi>
                                                         </td>
                                                     </tr>
                                                     <tr class="border-b">
                                                         <th class="p-4 text-start text-black">Shipping</th>
                                                         <td class="p-4 text-end" colspan="2">
                                                             <span>Local Pickup:</span>
-                                                            <bdi><span class="">$</span>15.00</bdi>
+                                                            <bdi><span class="">$</span>0</bdi>
                                                         </td>
                                                     </tr>
                                                     <tr class="border-b">
@@ -226,7 +230,11 @@
                                                         <td class="p-4 text-end" colspan="2">
                                                             <strong>
                                                                 <span class="text-black">
-                                                                    <bdi><span class="">$</span>50.00</bdi>
+                                                                    <bdi>
+                                                                        <?php foreach ($total as $key => $total2) { ?>
+                                                                            $<?php echo $total2['total'] ?>.000
+                                                                        <?php } ?>
+                                                                    </bdi>
                                                                 </span>
                                                             </strong>
                                                         </td>
