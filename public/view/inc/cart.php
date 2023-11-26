@@ -14,7 +14,7 @@
                             <a href="#" class="flex text-[13px] relative">
 
                                 <div class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:"
-                                    onclick="delete_items( <?php echo $items_list['id'] ?>)">
+                                    onclick="delete_items(this,<?php echo $items_list['id'] ?>)">
                                     <img src="./media/img/<?php echo $items_list['image'] ?>.jpg" alt="" loading="lazy"
                                         class="w-[70px] mr-2 ">
                                 </div>

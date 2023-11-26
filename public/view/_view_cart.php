@@ -122,7 +122,7 @@
                                                     </span>
                                                 </td>
                                                 <td class="text-center p-4">
-                                                    <button onclick="delete_items( <?php echo $items_list['id'] ?>)">
+                                                    <button onclick="delete_items(this,<?php echo $items_list['id'] ?>)">
                                                         <i class="fa-solid fa-x"></i>
                                                     </button>
                                                 </td>

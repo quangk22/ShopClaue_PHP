@@ -294,7 +294,6 @@ function cart_mini() {
     const cart_mini = document.getElementById('cart_mini2');
 
     showCart.classList.remove('hidden');
-    reloadCartContent();
     setTimeout(function () {
         cart_mini.style.transform = 'translateX(0)';
         cart_mini.style.transition = 'transform 500ms ease-in-out';
@@ -358,7 +357,7 @@ function close_detail() {
 }
 
 
-function add_cart_item(id, price, quantity,image,name) {
+function add_cart_item(id, price, quantity, image, name) {
     var formData = new FormData();
     formData.append("id", id);
     formData.append("price", price);
@@ -373,7 +372,7 @@ function add_cart_item(id, price, quantity,image,name) {
     var new_item = document.createElement("li");
     new_item.className = "flex mt-3";
     new_item.innerHTML = `
-    <li class="flex mt-3">
+
                             <a href="#" class="flex text-[13px] relative">
                                 
                                 <div
@@ -390,23 +389,27 @@ function add_cart_item(id, price, quantity,image,name) {
                                             <span>1</span>
                                             x
                                             <span>$
-                                            `+ price+`.00
+                                            `+ price + `.00
                                             </span>
                                         </span>
                                     </span>
                                 </span>
                             </a>
-                        </li>
+                      
     `;
     cart.appendChild(new_item);
 
 }
-function delete_items(item_id) {
+function delete_items(element, item_id) {
+    const remove_item = element.closest(".item_cart");
+    if (remove_item) {
+        remove_item.remove();
+    }
     var formData = new FormData();
-    formData.append("item_id", item_id);
+    formData.append("item_id",item_id);
     fetch("../core/db/insert_cart.php", {
         method: "POST",
         body: formData,
     });
-    reloadCartContent();
+
 }

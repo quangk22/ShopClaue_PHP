@@ -39,9 +39,9 @@
     /* Caption text */
   </style>
 </head>
-
 <body class="font-poppins">
   <div class="container-main">
+  <?php session_start(); ?>
     <!-- search -->
     <?php include "./view/inc/search.php" ?>
     <!-- cart -->
@@ -51,6 +51,7 @@
     <!-- mobi menu -->
     <?php include "./view/inc/mobi_menu.php" ?>
     <div class="Content-Wrapper">
+    
       <?php include "./view/inc/header.php" ?>
       <main>
         <!-- Slideshow container -->
