@@ -9,26 +9,30 @@
         <div class="p-5">
             <div class="h-full ">
                 <ul class="overflow-y-auto h-auto max-h-[24rem] container_cart">
-                    <?php foreach ($itemsList as $key => $items_list) { ?>
+                    <?php foreach ($_SESSION['cart'] as $item) { ?>
                         <li class="flex mt-3 item_cart">
                             <a href="#" class="flex text-[13px] relative">
 
-                                <div class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:"
-                                    onclick="delete_items(this,<?php echo $items_list['id'] ?>)">
-                                    <img src="./media/img/<?php echo $items_list['image'] ?>.jpg" alt="" loading="lazy"
+                                <div
+                                    class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:">
+
+                                    <img src="./media/img/<?php echo $item['productImage'] ?>.jpg" alt="" loading="lazy"
                                         class="w-[70px] mr-2 ">
                                 </div>
 
                                 <span class="block whitespace-nowrap">
                                     <h1 class="text-sm font-poppins">
-                                        <?php echo $items_list['name'] ?>
+                                        <?php echo $item['productName'] ?>
                                     </h1>
                                     <span class="flex text-xs text-[#878787]">
                                         <span>
-                                            <span>1</span>
+                                            <span>
+                                                <?php echo $item['quantity']; ?>
+                                            </span>
                                             x
-                                            <span>$
-                                                <?php echo $items_list['price'] ?>.00
+                                            <span>
+                                                $
+                                                <?php echo $item['productPrice'] ?>.00
                                             </span>
                                         </span>
                                     </span>
@@ -40,10 +44,14 @@
             </div>
             <div class="flex justify-between items-center my-5 text-lg">
                 <p class="font-bold">Subtotal:</p>
-                <span>
-                    <?php foreach ($total as $key => $total2) { ?>
-                        $<?php echo $total2['total'] ?>.000
-                    <?php } ?>
+                <span><span>$</span>
+                    <?php
+                    $totalPrice = 0;
+                    foreach ($_SESSION['cart'] as $item) {
+                        $totalPrice += $item['productPrice'] * $item['quantity'];
+                    }
+                    echo number_format($totalPrice, 3);
+                    ?>
                 </span>
             </div>
             <div class="flex justify-center items-center w-full">

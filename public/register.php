@@ -47,5 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     } else {
         include_once './view/_account.php';
     }
+    // 
+    if (isset($_SESSION['cart'])) {
+        $cart = $_SESSION['cart'];
+    } else {
+        $cart = array();
+    }
 }
 ?>

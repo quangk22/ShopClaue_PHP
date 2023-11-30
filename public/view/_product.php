@@ -97,12 +97,12 @@
                                     <div class="item">
                                         <div class="product-img relative group">
                                             <div class="img">
-                                                <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                                <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                                                     class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
                                                     <img src="./media/img/<?php echo $productList[$i]['image']; ?>.jpg"
                                                         alt="" loading="lazy">
                                                 </a>
-                                                <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                                <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                                                     class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
                                                     <img src="./media/img/id11.jpg" alt="" loading="lazy">
                                                 </a>
@@ -113,9 +113,9 @@
                                                         <div class="max-lg:block"><i
                                                                 class="fa-regular fa-heart fa-lg text-white "></i>
                                                         </div>
-                                                        <div class=" lg:hidden  max-md:block "><i
-                                                                class="fa-solid fa-eye fa-lg text-white"
-                                                                data-product-id="1"></i></div>
+                                                        <div class=" lg:hidden  max-md:block ">
+                                                            <i class="fa-solid fa-eye fa-lg text-white quickShop"></i>
+                                                        </div>
                                                     </div>
                                                 </a>
                                             </div>
@@ -123,7 +123,7 @@
                                                 class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
                                                 <div
                                                     class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
-                                                    <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                                                         class="whitespace-nowrap">Selec options</a>
                                                 </div>
                                                 <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
@@ -134,17 +134,18 @@
                                         </div>
                                         <div class="product-info mt-[15px] font-poppins text-sm  ">
                                             <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
-                                                <a
-                                                    href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>">
+                                                <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>">
                                                     <?php echo $productList[$i]['name']; ?>
                                                 </a>
                                             </h3>
-                                            <span class="text-[#696969]"> $
+                                            <span class="text-[#696969]">
+                                                $
                                                 <?php
                                                 $discount = 30;
                                                 $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);
                                                 echo $discountedPrice ?>.000
                                                 -
+
                                                 $
                                                 <?php echo $productList[$i]['price']; ?>.000
                                             </span>
@@ -173,12 +174,12 @@
                                         <div class="item">
                                             <div class="product-img relative group">
                                                 <div class="img">
-                                                    <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
                                                         <img src="./media/img/<?php echo $productList[$i]['image']; ?>.jpg"
                                                             alt="" loading="lazy">
                                                     </a>
-                                                    <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
                                                         <img src="./media/img/id11.jpg" alt="" loading="lazy">
                                                     </a>
@@ -189,9 +190,9 @@
                                                             <div class="max-lg:block"><i
                                                                     class="fa-regular fa-heart fa-lg text-white "></i>
                                                             </div>
-                                                            <div class=" lg:hidden  max-md:block "><i
-                                                                    class="fa-solid fa-eye fa-lg text-white"
-                                                                    data-product-id="1"></i></div>
+                                                            <div class=" lg:hidden  max-md:block ">
+                                                                <i class="fa-solid fa-eye fa-lg text-white quickShop"></i>
+                                                            </div>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -199,7 +200,7 @@
                                                     class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
                                                     <div
                                                         class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
-                                                        <a href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>"
+                                                        <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                                                             class="whitespace-nowrap">Selec options</a>
                                                     </div>
                                                     <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
@@ -210,17 +211,18 @@
                                             </div>
                                             <div class="product-info mt-[15px] font-poppins text-sm  ">
                                                 <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
-                                                    <a
-                                                        href="detail_product.php?product_id=<?php echo $productList[$i]['id']; ?>&image_product=<?php echo $productList[$i]['image']; ?>&price_product=<?php echo $productList[$i]['price']; ?> &name_product=<?php echo $productList[$i]['name']; ?> &descript_product=<?php echo $productList[$i]['description']; ?>">
+                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>">
                                                         <?php echo $productList[$i]['name']; ?>
                                                     </a>
                                                 </h3>
-                                                <span class="text-[#696969]"> $
+                                                <span class="text-[#696969]">
+                                                    $
                                                     <?php
                                                     $discount = 30;
                                                     $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);
                                                     echo $discountedPrice ?>.000
                                                     -
+
                                                     $
                                                     <?php echo $productList[$i]['price']; ?>.000
                                                 </span>

@@ -57,15 +57,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($itemsList as $key => $items_list) { ?>
+                                        <?php foreach ($cart as $item) { ?>
                                             <tr class="border-b ">
                                                 <td class="p-4">
-                                                    <img src="./media/img/<?php echo $items_list['image'] ?>.jpg" alt=""
+                                                    <img src="./media/img/<?php echo $item['productImage']; ?>.jpg" alt=""
                                                         class="w-[100px]">
                                                 </td>
                                                 <td class="p-4 text-sm  ">
                                                     <span>
-                                                        <?php echo $items_list['name'] ?>
+                                                        <?php echo $item['productName']; ?>
                                                     </span>
                                                     <dl class="flex text-[#878787] mt-1">
                                                         <dt class="">Size:</dt>
@@ -76,7 +76,7 @@
                                                     <div class="hidden max-md:block">
                                                         <span class="">
                                                             <bdi><span class="">$</span>
-                                                                <?php echo $items_list['price'] ?>
+                                                                <?php echo $item['productPrice']; ?>
                                                             </bdi>
                                                         </span>
                                                         <div
@@ -96,14 +96,14 @@
                                                 <td class="p-4 text-center text-[#878787] max-md:hidden">
                                                     <span class="">
                                                         <bdi><span class="">$</span>
-                                                            <?php echo $items_list['price'] ?>.000
+                                                            <?php echo $item['productPrice']; ?>.000
                                                         </bdi>
                                                     </span>
                                                 </td>
                                                 <td class="p-4 text-center relative max-md:hidden">
                                                     <div
                                                         class="border-2 border-black rounded-full w-[115px]  p-2 float-none justify-center flex items-center text-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2">
-                                                        <input type="number" value="1"
+                                                        <input type="number" value="<?php echo $item['quantity']; ?>"
                                                             class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
                                                         <div
                                                             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
@@ -114,17 +114,23 @@
                                                         </div>
                                                     </div>
                                                 </td>
+
                                                 <td class="p-4 text-center text-[#878787]">
                                                     <span class="text-center">
                                                         <bdi><span class="">$</span>
-                                                            <?php echo $items_list['price'] ?>.000
+                                                            <?php echo $item['productPrice'] * $item['quantity'] ?>.000
                                                         </bdi>
                                                     </span>
                                                 </td>
                                                 <td class="text-center p-4">
-                                                    <button onclick="delete_items(this,<?php echo $items_list['id'] ?>)">
-                                                        <i class="fa-solid fa-x"></i>
-                                                    </button>
+                                                    <form method="post" action="view_cart.php">
+                                                        <input type="hidden" name="productId"
+                                                            value="<?php echo $item['productId']; ?>">
+                                                        <input type="hidden" name="_method" value="delete">
+                                                        <button type="submit">
+                                                            <i class="fa-solid fa-x"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -157,9 +163,13 @@
                                                 <th class="text-left p-4">Subtotal</th>
                                                 <td data-title="Subtotal" class="text-end p-4">
                                                     <span class=""><bdi>
-                                                    <?php foreach ($total as $key => $total2) { ?>
-                                                                            $<?php echo $total2['total'] ?>.000
-                                                                        <?php } ?>
+                                                            <?php
+                                                            $totalPrice = 0;
+                                                            foreach ($cart as $item) {
+                                                                $totalPrice += $item['productPrice'] * $item['quantity'];
+                                                            }
+                                                            echo number_format($totalPrice, 3);
+                                                            ?>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -190,9 +200,13 @@
                                                 <td data-title="Total" class="text-end p-4">
                                                     <strong>
                                                         <span class=""><bdi><span class=""></span>
-                                                                <?php foreach ($total as $key => $total2) { ?>
-                                                                    $<?php echo  $total2['total'] ?>.000
-                                                                <?php } ?>
+                                                                <?php
+                                                                $totalPrice = 0;
+                                                                foreach ($cart as $item) {
+                                                                    $totalPrice += $item['productPrice'] * $item['quantity'];
+                                                                }
+                                                                echo number_format($totalPrice, 3);
+                                                                ?>
 
                                                             </bdi></span>
                                                     </strong>

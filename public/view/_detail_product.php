@@ -40,184 +40,206 @@
                                         class="fa-solid fa-chevron-right text-[#878787] text-[10px]"></i>
                                 </li>
                                 <li class="ml-1 text-[#878787] detail2" id="nameDetail">
-                                    <?php echo $_GET["name_product"] ?>
+                                    <?php foreach ($productList as $product) { ?>
+                                        <?php if ($product['id'] == $_GET['id']) { ?>
+                                            <?php echo $product['name'] ?>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="pt-10 w-[73.125rem] px-5 m-auto max-w-full">
-                        <div class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
-                            <div class="w-full">
-                                <div class="grid grid-cols-2 grid-rows-2 gap-3">
-                                    <div class="image" id="imgProduct"><img
-                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
-                                    <div class="image" id="imgProduct"><img
-                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
-                                    <div class="image" id="imgProduct"><img
-                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
-                                    <div class="image" id="imgProduct"><img
-                                            src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg" alt=""></div>
-                                </div>
-                            </div>
-                            <div class="pl-8 max-md:pl-0 max-md:pt-3">
-                                <div class="detail">
-                                    <h1 class="text-lg font-semibold mb-1 name" id="nameProduct">
-                                        <?php echo $_GET["name_product"] ?>
-                                    </h1>
-                                    <div class="text-[#878787] mb-5"><span class="text-[22px] price" id="priceProduct">
-                                            $
-                                            <?php echo $_GET["price_product"] ?>.000
-                                        </span></div>
-                                    <div class="text-[#878787] text-sm mb-5">
-                                        <p class="description" id="description"></p>
+                        <?php foreach ($productList as $product) { ?>
+                            <?php if ($product['id'] == $_GET['id']) { ?>
+
+                                <!--  -->
+                                <div class="grid grid-cols-2 pb-[50px] max-md:grid-cols-none max-md:grid-rows-1 detail">
+                                    <div class="w-full">
+                                        <div class="grid grid-cols-2 grid-rows-2 gap-3">
+                                            <div class="image" id="imgProduct"><img
+                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                            <div class="image" id="imgProduct"><img
+                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                            <div class="image" id="imgProduct"><img
+                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                            <div class="image" id="imgProduct"><img
+                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                        </div>
                                     </div>
-                                    <div class="mb-5">
-                                        <!--  -->
-                                        <div class="flex">
-                                            <div class="mr-[10px]">
-                                                <div
-                                                    class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
-                                                    <input type="number" min="1" value="1" inputmode="none" readonly
-                                                        class="outline-none w-full flex text-center bg-transparent customNumberInput"
-                                                        id="customNumberInput">
-                                                    <div
-                                                        class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                        <div class="ml-3 decreaseButton" id="decreaseButton"><i
-                                                                class="fa-solid fa-minus"></i></div>
-                                                        <div class="mr-3 increaseButton" id="increaseButton"><i
-                                                                class="fa-solid fa-plus"></i></div>
+                                    <div class="pl-8 max-md:pl-0 max-md:pt-3">
+                                        <div class="detail">
+                                            <h1 class="text-lg font-semibold mb-1 name" id="nameProduct">
+                                                <?php echo $product['name'] ?>
+                                            </h1>
+                                            <div class="text-[#878787] mb-5"><span class="text-[22px] price" id="priceProduct">
+                                                    $
+                                                    <?php echo $product['price'] ?>.000
+                                                </span></div>
+                                            <div class="text-[#878787] text-sm mb-5">
+                                                <p class="description" id="description"></p>
+                                            </div>
+                                            <div class="mb-5">
+                                                <!--  -->
+                                                <form method="post" action="view_cart.php" class="flex">
+                                                    <input type="hidden" name="_method" value="create">
+                                                    <div class="mr-[10px]">
+                                                        <div
+                                                            class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
+                                                            <input type="hidden" name="productId"
+                                                                value="<?php echo $product['id']; ?>">
+                                                            <input type="hidden" name="productName"
+                                                                value="<?php echo $product['name']; ?>">
+                                                            <input type="hidden" name="productImage"
+                                                                value="<?php echo $product['image']; ?>">
+                                                            <input type="hidden" name="productPrice"
+                                                                value="<?php echo $product['price']; ?>">
+                                                            <input type="number" value="1" name="quantity"
+                                                                class="outline-none w-full flex text-center bg-transparent customNumberInput"
+                                                                id="customNumberInput">
+                                                            <div
+                                                                class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                                <div class="ml-3 decreaseButton" id="decreaseButton"><i
+                                                                        class="fa-solid fa-minus"></i></div>
+                                                                <div class="mr-3 increaseButton" id="increaseButton"><i
+                                                                        class="fa-solid fa-plus"></i></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
+
+                                                    <div class="mr-[10px]">
+
+                                                        <button type="submit"
+                                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
+                                                            id="cart_mini">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+
+                                                    <div
+                                                        class="flex justify-center items-center border border-black rounded-full">
+                                                        <i class="fa-regular fa-heart p-3"></i>
+                                                    </div>
+                                                </form>
+                                                <!--  -->
+                                                <div class="mt-6 font-semibold text-sm">
+                                                    <a href="#" class="mr-">Size Guide</a>
+                                                    <a href="#">Delivery &amp; Return</a>
                                                 </div>
                                             </div>
-                                            <div class="mr-[10px]">
-                                                <button type="submit"
-                                                    class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
-                                                    onclick="add_cart_item('<?php echo $_GET['product_id']; ?>', '<?php echo $_GET['price_product']; ?>', document.getElementById('customNumberInput').value, '<?php echo $_GET['image_product']; ?>', '<?php echo $_GET['name_product']; ?>'); cart_mini();" id="cart_mini">
-                                                    Add to cart
-                                                </button>
+                                            <div class="inline-block text-sm mb-5">
+                                                <span class="flex mb-[5px] text-[#878787] flex-shrink flex-wrap">
+                                                    Categories:
+                                                    <a href="" class="text-black hover:text-[#56CFE1]"> Accessories</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">Bottom</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">Men</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">Shoes</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">T-Shirt</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">Tops</a>
+                                                </span>
+                                                <span class="flex mb-[5px] text-[#878787] flex-shrink flex-wrap">
+                                                    Tags:
+                                                    <a href="" class="text-black hover:text-[#56CFE1]"> bottom </a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">men</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]">shoes</a>,
+                                                    <a href="" class="text-black hover:text-[#56CFE1]"> short</a>
+                                                </span>
                                             </div>
-                                            <div
-                                                class="flex justify-center items-center border border-black rounded-full">
-                                                <i class="fa-regular fa-heart p-3"></i>
-                                            </div>
-                                        </div>
-                                        <!--  -->
-                                        <div class="mt-6 font-semibold text-sm">
-                                            <a href="#" class="mr-">Size Guide</a>
-                                            <a href="#">Delivery &amp; Return</a>
-                                        </div>
-                                    </div>
-                                    <div class="inline-block text-sm mb-5">
-                                        <span class="flex mb-[5px] text-[#878787] flex-shrink flex-wrap">
-                                            Categories:
-                                            <a href="" class="text-black hover:text-[#56CFE1]"> Accessories</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">Bottom</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">Men</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">Shoes</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">T-Shirt</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">Tops</a>
-                                        </span>
-                                        <span class="flex mb-[5px] text-[#878787] flex-shrink flex-wrap">
-                                            Tags:
-                                            <a href="" class="text-black hover:text-[#56CFE1]"> bottom </a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">men</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]">shoes</a>,
-                                            <a href="" class="text-black hover:text-[#56CFE1]"> short</a>
-                                        </span>
-                                    </div>
-                                    <div class="">
-                                        <h4 class="text-[21px] font-semibold">Buy this bundle and get off to 25%</h4>
-                                        <p class="text-[#878787] text-sm mb-5">Buy more save more. Save 15% when you
-                                            purchase 4 products, save 10% when
-                                            you purchase 3 products</p>
-                                        <div class="flex mb-5">
-                                            <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img
-                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
-                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
-                                                <span class="px-1 text-[#878787]">+</span>
-                                            </div>
-                                            <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img
-                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
-                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
-                                                <span class="px-1 text-[#878787]">+</span>
-                                            </div>
-                                            <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img
-                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
-                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
-                                                <span class="px-1 text-[#878787]">+</span>
-                                            </div>
-                                            <div class="flex justify-center items-center">
-                                                <div class="image" id="imgProduct2"><img
-                                                        src="./media/img/<?php echo $_GET["image_product"]; ?>.jpg"
-                                                        alt="" class=" w-[70px] h-[70px] object-cover"></div>
-                                            </div>
-                                        </div>
-                                        <div class="list-select">
                                             <div class="">
-                                                <div class="text-[#878787] text-sm mb-2">
-                                                    <input type="checkbox" checked="checkbox" disabled="disabled"
-                                                        class="cursor-not-allowed">
-                                                    <span>This product: Calvin Klein Logo Sweatpants - $29.75 /
-                                                        $35.00</span>
-                                                </div>
-                                            </div>
-                                            <div class="mb-[10px]">
-                                                <div class="text-[#878787] text-sm">
-                                                    <input type="checkbox" checked="checkbox" name="" id="">
-                                                    <span>Cyan Boheme - $38.25 / $45.00</span>
-                                                </div>
-                                                <div class="text-[#878787] text-sm flex">
-                                                    <div
-                                                        class="border border-[#ddd] w-16 flex justify-center items-center py-2 mr-2">
-                                                        <select name="" id="" class="outline-none w-full">
-                                                            <option value="">Pink</option>
-                                                            <option value="">Cyan</option>
-                                                        </select>
+                                                <h4 class="text-[21px] font-semibold">Buy this bundle and get off to 25%</h4>
+                                                <p class="text-[#878787] text-sm mb-5">Buy more save more. Save 15% when you
+                                                    purchase 4 products, save 10% when
+                                                    you purchase 3 products</p>
+                                                <div class="flex mb-5">
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="image" id="imgProduct2"><img
+                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                class=" w-[70px] h-[70px] object-cover"></div>
+                                                        <span class="px-1 text-[#878787]">+</span>
                                                     </div>
-                                                    <div
-                                                        class="border border-[#ddd] w-10 flex justify-center items-center py-2">
-                                                        <select name="" id="" class="outline-none w-full">
-                                                            <option value="">M</option>
-                                                            <option value="">S</option>
-                                                        </select>
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="image" id="imgProduct2"><img
+                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                class=" w-[70px] h-[70px] object-cover"></div>
+                                                        <span class="px-1 text-[#878787]">+</span>
+                                                    </div>
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="image" id="imgProduct2"><img
+                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                class=" w-[70px] h-[70px] object-cover"></div>
+                                                        <span class="px-1 text-[#878787]">+</span>
+                                                    </div>
+                                                    <div class="flex justify-center items-center">
+                                                        <div class="image" id="imgProduct2"><img
+                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                class=" w-[70px] h-[70px] object-cover"></div>
                                                     </div>
                                                 </div>
+                                                <div class="list-select">
+                                                    <div class="">
+                                                        <div class="text-[#878787] text-sm mb-2">
+                                                            <input type="checkbox" checked="checkbox" disabled="disabled"
+                                                                class="cursor-not-allowed">
+                                                            <span>This product: Calvin Klein Logo Sweatpants - $29.75 /
+                                                                $35.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-[10px]">
+                                                        <div class="text-[#878787] text-sm">
+                                                            <input type="checkbox" checked="checkbox" name="" id="">
+                                                            <span>Cyan Boheme - $38.25 / $45.00</span>
+                                                        </div>
+                                                        <div class="text-[#878787] text-sm flex">
+                                                            <div
+                                                                class="border border-[#ddd] w-16 flex justify-center items-center py-2 mr-2">
+                                                                <select name="" id="" class="outline-none w-full">
+                                                                    <option value="">Pink</option>
+                                                                    <option value="">Cyan</option>
+                                                                </select>
+                                                            </div>
+                                                            <div
+                                                                class="border border-[#ddd] w-10 flex justify-center items-center py-2">
+                                                                <select name="" id="" class="outline-none w-full">
+                                                                    <option value="">M</option>
+                                                                    <option value="">S</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-[#878787] text-sm mb-[10px]">
+                                                        <input type="checkbox" checked="checkbox" name="" id="">
+                                                        <span>Leather White Trainers - $60.78 / $71.50</span>
+                                                    </div>
+                                                    <div class="text-[#878787] text-sm mb-[10px]">
+                                                        <input type="checkbox" checked="checkbox" name="" id="">
+                                                        <span>Premium Shoes Clean Package - $30.60 / $36.00</span>
+                                                    </div>
+                                                </div>
+                                                <div class="text-[#878787] text-sm py-5">
+                                                    <strong>Price for all:</strong>
+                                                    <span>$159.38</span>/
+                                                    <span>$187.50</span>
+                                                    <span>(save 15%)</span>
+                                                </div>
+                                                <div class="uppercase">
+                                                    <button
+                                                        class="bg-[#56cfe1] border-none text-white uppercase text-base font-semibold px-8 py-2 rounded-full">Add
+                                                        bundle to cart</button>
+                                                </div>
                                             </div>
-                                            <div class="text-[#878787] text-sm mb-[10px]">
-                                                <input type="checkbox" checked="checkbox" name="" id="">
-                                                <span>Leather White Trainers - $60.78 / $71.50</span>
+                                            <div class="flex justify-center mt-20">
+                                                <a href="" class="px-3 text-lg"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="" class="px-3 text-lg"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="" class="px-3 text-lg"><i class="fa-brands fa-pinterest"></i></a>
+                                                <a href="" class="px-3 text-lg"><i class="fa-brands fa-tumblr"></i></a>
                                             </div>
-                                            <div class="text-[#878787] text-sm mb-[10px]">
-                                                <input type="checkbox" checked="checkbox" name="" id="">
-                                                <span>Premium Shoes Clean Package - $30.60 / $36.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="text-[#878787] text-sm py-5">
-                                            <strong>Price for all:</strong>
-                                            <span>$159.38</span>/
-                                            <span>$187.50</span>
-                                            <span>(save 15%)</span>
-                                        </div>
-                                        <div class="uppercase">
-                                            <button
-                                                class="bg-[#56cfe1] border-none text-white uppercase text-base font-semibold px-8 py-2 rounded-full">Add
-                                                bundle to cart</button>
+                                            <div class="listProduct"></div>
                                         </div>
                                     </div>
-                                    <div class="flex justify-center mt-20">
-                                        <a href="" class="px-3 text-lg"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="" class="px-3 text-lg"><i class="fa-brands fa-twitter"></i></a>
-                                        <a href="" class="px-3 text-lg"><i class="fa-brands fa-pinterest"></i></a>
-                                        <a href="" class="px-3 text-lg"><i class="fa-brands fa-tumblr"></i></a>
-                                    </div>
-                                    <div class="listProduct"></div>
                                 </div>
-                            </div>
-                        </div>
-                        <!--  -->
+                                <!--  -->
+                            <?php } ?>
+                        <?php } ?>
                         <div class="pt-[50px] pb-[20px]">
                             <div class="">
                                 <ul class="flex justify-center items-center  text-center">

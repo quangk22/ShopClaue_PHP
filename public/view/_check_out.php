@@ -188,20 +188,21 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody class="w-full border-b">
-                                                    <?php foreach ($itemsList as $key => $items_list) { ?>
+                                                    <?php foreach ($_SESSION['cart'] as $item) { ?>
                                                         <tr class="cart_item w-full">
                                                             <td class="p-4 w-[80px]">
-                                                                <img src="./media/img/<?php echo $items_list['image'] ?>.jpg"
+                                                                <img src="./media/img/<?php echo $item['productImage']; ?>.jpg"
                                                                     alt="" class="w-[80px]">
                                                             </td>
                                                             <td class="item-name p-4">
-                                                                <?php echo $items_list['name'] ?>&nbsp; <strong class="">×
-                                                                    1</strong>
+                                                                <?php echo $item['productName']; ?>&nbsp; <strong class="">×
+                                                                    <?php echo $item['quantity']; ?>
+                                                                </strong>
                                                                 <ul class=""></ul>
                                                             </td>
                                                             <td class="product-total p-4 text-end">
                                                                 <span class=""><bdi><span class="">$</span>
-                                                                        <?php echo $items_list['price'] ?>.000
+                                                                        <?php echo $item['productPrice'] * $item['quantity']; ?>.000
                                                                     </bdi></span>
                                                             </td>
                                                         </tr>
@@ -212,9 +213,13 @@
                                                         <th class="p-4 text-start text-black">Subtotal</th>
                                                         <td class="p-4 text-end" colspan="2">
                                                             <bdi>
-                                                            <?php foreach ($total as $key => $total2) { ?>
-                                                                            $<?php echo $total2['total'] ?>.000
-                                                                        <?php } ?>
+                                                                <?php
+                                                                $totalPrice = 0;
+                                                                foreach ($cart as $item) {
+                                                                    $totalPrice += $item['productPrice'] * $item['quantity'];
+                                                                }
+                                                                echo number_format($totalPrice, 3);
+                                                                ?>
                                                             </bdi>
                                                         </td>
                                                     </tr>
@@ -231,9 +236,13 @@
                                                             <strong>
                                                                 <span class="text-black">
                                                                     <bdi>
-                                                                        <?php foreach ($total as $key => $total2) { ?>
-                                                                            $<?php echo $total2['total'] ?>.000
-                                                                        <?php } ?>
+                                                                        <?php
+                                                                        $totalPrice = 0;
+                                                                        foreach ($cart as $item) {
+                                                                            $totalPrice += $item['productPrice'] * $item['quantity'];
+                                                                        }
+                                                                        echo number_format($totalPrice, 3);
+                                                                        ?>
                                                                     </bdi>
                                                                 </span>
                                                             </strong>

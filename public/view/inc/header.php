@@ -350,13 +350,6 @@
             <a href="account.php">
             <i class="fa-regular fa-user fa-xs"></i> </a>
           <?php } ?>
-          <!-- <a href="account.php">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-          </a> -->
         </li>
 
         <!-- Like view -->
@@ -374,7 +367,7 @@
         <li onclick="cart_mini()" class="show-cart-btn">
           <div class="flex items-center space-x-4 relative">
             <a href="#"
-              class="text-center text-[#222]  before:content-['2'] before:text-white before:text-xs
+              class="text-center text-[#222]  before:content-['<?php echo isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantity')) : 0; ?>'] before:text-white before:text-xs
                            before:w-5 before:h-5 before:rounded-full before:absolute  before:bg-[#222] before:-top-2 before:-right-[9px] before:flex before:justify-center before:items-center   ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
