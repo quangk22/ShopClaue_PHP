@@ -36,6 +36,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     } else {
         include_once './view/_account.php';
     }
-    // giỏ hàng
 }
 ?>

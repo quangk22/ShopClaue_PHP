@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (isset($_POST['_method'])) {
         switch ($_POST['_method']) {
             case 'delete':
-                delete();
+                destroy();
                 break;
             case 'create':
                 create();
@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
 
     }
-    header('location: view_cart.php');
+    header('location: cart.php');
 }
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     if (isset($_SESSION['cart'])) {
@@ -65,7 +65,7 @@ function create(){
 
     $_SESSION['cart'] = $cart;
 }
-function delete(){
+function destroy(){
     $cart = $_SESSION['cart'];
     if(isset($_POST['productId'])){
         for ($i = 0; $i < count($cart); $i++) {

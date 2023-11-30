@@ -81,7 +81,7 @@
                                             </div>
                                             <div class="mb-5">
                                                 <!--  -->
-                                                <form method="post" action="view_cart.php" class="flex">
+                                                <form method="post" action="cart.php" class="flex">
                                                     <input type="hidden" name="_method" value="create">
                                                     <div class="mr-[10px]">
                                                         <div

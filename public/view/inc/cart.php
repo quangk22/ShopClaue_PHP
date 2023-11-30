@@ -56,7 +56,7 @@
             </div>
             <div class="flex justify-center items-center w-full">
                 <div class="w-full text-white text-sm">
-                    <a href="../public/view_cart.php">
+                    <a href="../public/cart.php">
                         <p
                             class="mb-3 bg-[#222]  rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
                             view cart</p>

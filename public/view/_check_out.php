@@ -213,9 +213,9 @@
                                                         <th class="p-4 text-start text-black">Subtotal</th>
                                                         <td class="p-4 text-end" colspan="2">
                                                             <bdi>
-                                                                <?php
+                                                            <?php
                                                                 $totalPrice = 0;
-                                                                foreach ($cart as $item) {
+                                                                foreach ($_SESSION['cart'] as $item) {
                                                                     $totalPrice += $item['productPrice'] * $item['quantity'];
                                                                 }
                                                                 echo number_format($totalPrice, 3);
@@ -238,7 +238,7 @@
                                                                     <bdi>
                                                                         <?php
                                                                         $totalPrice = 0;
-                                                                        foreach ($cart as $item) {
+                                                                        foreach ($_SESSION['cart'] as $item) {
                                                                             $totalPrice += $item['productPrice'] * $item['quantity'];
                                                                         }
                                                                         echo number_format($totalPrice, 3);
