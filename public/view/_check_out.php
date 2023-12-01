@@ -101,55 +101,56 @@
                                 </div>
                             </form>
                             <div class="mt-16">
-                                <div class="grid grid-cols-2 max-md:grid-cols-none max-md:grid-rows-2">
+                                <form action="check_out.php" method="post"
+                                    class="grid grid-cols-2 max-md:grid-cols-none max-md:grid-rows-2">
                                     <div class="pr-4 max-md:pr-0 text-[#878787]">
                                         <h3 class="uppercase font-bold text-black">Billing details</h3>
                                         <div class=" w-full">
                                             <p class="block float-left w-[49%] mb-5">
-                                                <label for="">First name </label>
-                                                <input type="text"
+                                                <label for="firstName">First name </label>
+                                                <input type="text" id="firstName" name="firstName"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block float-right w-[49%] mb-5">
-                                                <label for="">Last name </label>
-                                                <input type="text"
+                                                <label for="lastName">Last name </label>
+                                                <input type="text" id="lastName" name="lastName"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Company name (optional) </label>
-                                                <input type="text"
+                                                <label for="Company">Company name (optional) </label>
+                                                <input type="text" id="Company"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Country / Region</label>
-                                                <input type="text"
+                                                <label for="Region">Country / Region</label>
+                                                <input type="text" id="Region"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Postcode / ZIP (optional)</label>
-                                                <input type="text"
+                                                <label for="Postcode">Postcode / ZIP (optional)</label>
+                                                <input type="text" id="Postcode"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
-                                                <input type="text"
+                                                <input type="text" id="Postcode"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-5 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Town / City </label>
-                                                <input type="text"
+                                                <label for="City">Town / City </label>
+                                                <input type="text" id="City"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Town / City </label>
-                                                <input type="text"
+                                                <label for="address">Address</label>
+                                                <input type="text" id="address" name="address"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Phone</label>
-                                                <input type="text"
+                                                <label for="Phone">Phone</label>
+                                                <input type="text" id="Phone" name="phone"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                             <p class="block mt-5">
-                                                <label for="">Email address</label>
-                                                <input type="text"
+                                                <label for="email">Email</label>
+                                                <input type="text" id="email" name="email"
                                                     class="outline-none border border-[#ccc] px-5 w-full h-9 mt-2 ">
                                             </p>
                                         </div>
@@ -213,7 +214,7 @@
                                                         <th class="p-4 text-start text-black">Subtotal</th>
                                                         <td class="p-4 text-end" colspan="2">
                                                             <bdi>
-                                                            <?php
+                                                                <?php
                                                                 $totalPrice = 0;
                                                                 foreach ($_SESSION['cart'] as $item) {
                                                                     $totalPrice += $item['productPrice'] * $item['quantity'];
@@ -227,7 +228,7 @@
                                                         <th class="p-4 text-start text-black">Shipping</th>
                                                         <td class="p-4 text-end" colspan="2">
                                                             <span>Local Pickup:</span>
-                                                            <bdi><span class="">$</span>0</bdi>
+                                                            <bdi><span class="">$</span>15.000</bdi>
                                                         </td>
                                                     </tr>
                                                     <tr class="border-b">
@@ -241,7 +242,7 @@
                                                                         foreach ($_SESSION['cart'] as $item) {
                                                                             $totalPrice += $item['productPrice'] * $item['quantity'];
                                                                         }
-                                                                        echo number_format($totalPrice, 3);
+                                                                        echo number_format($totalPrice + 15, 3);
                                                                         ?>
                                                                     </bdi>
                                                                 </span>
@@ -257,7 +258,7 @@
                                                         <span>Check payments</span>
                                                     </li>
                                                     <li class="mb-5">
-                                                        <input type="checkbox">
+                                                        <input type="checkbox" checked>
                                                         <span>Cash on delivery</span>
                                                     </li>
                                                     <li class="flex items-center flex-wrap">
@@ -287,14 +288,14 @@
                                                             <a href="" class="text-black"> terms and conditions</a>
                                                         </span>
                                                     </div>
-                                                    <button
-                                                        class="text-black border-2 border-black rounded-full px-9 py-2 font-semibold hover:bg-[#56cfe1] hover:border-[#56cfe1] hover:text-white">Proceed
-                                                        to PayPal</button>
+                                                    <button type="submit"
+                                                        class="text-black border-2 border-black rounded-full px-9 py-2 font-semibold hover:bg-[#56cfe1] hover:border-[#56cfe1] hover:text-white">Place
+                                                        order</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
 

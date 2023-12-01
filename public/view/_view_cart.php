@@ -102,14 +102,15 @@
                                             <td class="p-4 text-center relative max-md:hidden">
                                                 <div
                                                     class="border-2 border-black rounded-full w-[115px]  p-2 float-none justify-center flex items-center text-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2">
-                                                    <input type="number" value="<?php echo $item['quantity']; ?>"
-                                                        class="outline-none w-full bg-opacity-0 flex justify-center text-center items-center">
+                                                    <input type="number" value="1" name="quantity"
+                                                        class="outline-none w-full flex text-center ml-2 bg-transparent customNumberInput"
+                                                        id="customNumberInput">
                                                     <div
-                                                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                                                        <button class="absolute left-[-36px] top-[-12px]"><i
-                                                                class="fa-solid fa-minus"></i></button>
-                                                        <button class="absolute right-[-36px] top-[-12px]"><i
-                                                                class="fa-solid fa-plus"></i></button>
+                                                        class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                        <div class="ml-3 decreaseButton" id="decreaseButton"><i
+                                                                class="fa-solid fa-minus"></i></div>
+                                                        <div class="mr-3 increaseButton" id="increaseButton"><i
+                                                                class="fa-solid fa-plus"></i></div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -152,7 +153,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                             <div class="w-full mt-10 pb-[60px] inline-block ">
+                            <div class="w-full mt-10 pb-[60px] inline-block ">
                                 <div class="w-[40%] float-right max-md:float-none max-md:w-full">
                                     <h2 class="font-bold uppercase  mb-5">Cart totals</h2>
                                     <table class="border w-full">

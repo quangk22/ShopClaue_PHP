@@ -1,6 +1,7 @@
 <?php
 include_once '../core/db/db_products.php';
 include_once '../core/db/db_users.php';
+include_once '../core/db/db_order_items.php';
 
 session_start();
 $error_message = '';
@@ -9,12 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
             $user = get_by_email_users($email);
+           
             $check_login = false;
 
             if ((isset($_POST['btnlogin'])) && ($_POST['btnlogin'])) {
                 if ($user && ($user['password'] == $password)) {
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
+                    $_SESSION['users_id'] = $user['id'];
                     $check_login = true;
                 }
             }

@@ -204,7 +204,7 @@
                                                             class="whitespace-nowrap">Selec options</a>
                                                     </div>
                                                     <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
-                                                        onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>')">
+                                                        onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>','<?php echo $productList[$i]['id']; ?>')">
                                                         Quick Shop
                                                     </div>
                                                 </div>

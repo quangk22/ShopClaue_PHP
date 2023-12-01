@@ -98,10 +98,10 @@
                                                                 class="outline-none w-full flex text-center bg-transparent customNumberInput"
                                                                 id="customNumberInput">
                                                             <div
-                                                                class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                                <div class="ml-3 decreaseButton" id="decreaseButton"><i
+                                                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                                <div class="ml-3 decreaseButton" onclick="decreaseQuantity()"><i
                                                                         class="fa-solid fa-minus"></i></div>
-                                                                <div class="mr-3 increaseButton" id="increaseButton"><i
+                                                                <div class="mr-3 increaseButton" onclick="increaseQuantity()"><i
                                                                         class="fa-solid fa-plus"></i></div>
                                                             </div>
                                                         </div>
@@ -111,7 +111,7 @@
 
                                                         <button type="submit"
                                                             class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
-                                                            id="cart_mini">
+                                                            id="cart_mini" onclick="submitForm()">
                                                             Add to cart
                                                         </button>
                                                     </div>

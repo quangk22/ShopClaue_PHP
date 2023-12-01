@@ -339,7 +339,7 @@
                     <?php echo $_SESSION['email'] ?></li>
                     <li
                     class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
-                  <a href="view_cart.php"> My order </a> </li>
+                  <a href="order.php"> My order </a> </li>
                   <li
                     class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
                    <a href="logout.php">Đăng xuất</a> </li>

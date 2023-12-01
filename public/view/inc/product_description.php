@@ -61,9 +61,9 @@
                                     </div>
                                     <div class="mr-[10px]">
                                         <button
-                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase"
-                                            onclick="cart_mini()">
-                                            <a href="">Add to cart</a>
+                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">
+                                            <a href="detail_product.php?id=">Add to cart</a>
+                                            <!-- // -->
                                         </button>
                                     </div>
                                     <div class="flex justify-center items-center border border-black rounded-full">

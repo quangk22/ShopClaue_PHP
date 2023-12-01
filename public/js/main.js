@@ -41,33 +41,49 @@ window.addEventListener('scroll', function () {
 });
 
 // 
+function decreaseQuantity() {
+    var input = document.getElementById('customNumberInput');
+    if (input.value > 1) {
+        input.value = parseInt(input.value) - 1;
+    }
+    input.dispatchEvent(new Event('input')); // Kích hoạt sự kiện input để cập nhật giá trị
+}
+
+function increaseQuantity() {
+    var input = document.getElementById('customNumberInput');
+    input.value = parseInt(input.value) + 1;
+    input.dispatchEvent(new Event('input')); // Kích hoạt sự kiện input để cập nhật giá trị
+}
+
+function submitForm() {
+    document.getElementById('addToCartForm').submit();
+}
 // Lấy tham chiếu đến phần tử <input> và các nút
 document.addEventListener("DOMContentLoaded", function () {
-    // Đặt mã JavaScript ở đây
-    const numberInput = document.querySelector('.customNumberInput');
-    const decreaseButton = document.querySelector('.decreaseButton');
-    const increaseButton = document.querySelector('.increaseButton');
+    const numberInputs = document.querySelectorAll('.customNumberInput');
+    const decreaseButtons = document.querySelectorAll('.decreaseButton');
+    const increaseButtons = document.querySelectorAll('.increaseButton');
 
-    let currentValue = 1; // Giá trị ban đầu
+    // Sử dụng một mảng để lưu trữ giá trị cho mỗi nút
+    let currentValues = Array.from({ length: numberInputs.length }, () => 1);
 
     // Xử lý sự kiện khi nút "-" được nhấn
-    if (decreaseButton) {
-        decreaseButton.addEventListener('click', function () {
-            if (currentValue) {
-                currentValue--;
-                numberInput.value = currentValue;
+    decreaseButtons.forEach(function(button, index) {
+        button.onclick = function () {
+            if (currentValues[index] > 1) {
+                currentValues[index]--;
+                numberInputs[index].value = currentValues[index];
             }
-
-        });
-    }
+        };
+    });
 
     // Xử lý sự kiện khi nút "+" được nhấn
-    if (increaseButton) {
-        increaseButton.addEventListener('click', function () {
-            currentValue++;
-            numberInput.value = currentValue;
-        });
-    }
+    increaseButtons.forEach(function(button, index) {
+        button.onclick = function () {
+            currentValues[index]++;
+            numberInputs[index].value = currentValues[index];
+        };
+    });
 });
 // 
 const btnDescription = document.getElementById("btn-description");
@@ -328,7 +344,7 @@ closeCart.addEventListener('click', function () {
     }, 500);
 });
 // -----------------------------------
-function quickShop(image, name, price) {
+function quickShop(image, name, price,id) {
     var imageProduct = document.getElementById('imageProduct');
     var nameProduct = document.getElementById('nameProduct');
     var priceProduct = document.getElementById('priceProduct');
@@ -354,62 +370,4 @@ function close_detail() {
     const MotaSP = document.getElementById('MotaSP');
     MotaSP.classList.add('hidden');
     console.log("đã click");
-}
-
-
-function add_cart_item(id, price, quantity, image, name) {
-    var formData = new FormData();
-    formData.append("id", id);
-    formData.append("price", price);
-    formData.append("quantity", quantity);
-
-    fetch("../core/db/insert_cart.php", {
-        method: "POST",
-        body: formData,
-    });
-    cart_mini();
-    var cart = document.querySelector('.container_cart');
-    var new_item = document.createElement("li");
-    new_item.className = "flex mt-3";
-    new_item.innerHTML = `
-
-                            <a href="#" class="flex text-[13px] relative">
-                                
-                                <div
-                                    class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:" onclick="delete_items( <?php echo $items_list['id'] ?>)">
-                                    <img src="./media/img/${image}.jpg" alt="" loading="lazy" class="w-[70px] mr-2 ">
-                                </div>
-
-                                <span class="block whitespace-nowrap">
-                                    <h1 class="text-sm font-poppins">
-                                    ${name}
-                                    </h1>
-                                    <span class="flex text-xs text-[#878787]">
-                                        <span>
-                                            <span>1</span>
-                                            x
-                                            <span>$
-                                            `+ price + `.00
-                                            </span>
-                                        </span>
-                                    </span>
-                                </span>
-                            </a>
-                      
-    `;
-    cart.appendChild(new_item);
-
-}
-function delete_items(element, item_id) {
-    const remove_item = element.closest(".item_cart");
-    if (remove_item) {
-        remove_item.remove();
-    }
-    var formData = new FormData();
-    formData.append("item_id",item_id);
-    fetch("../core/db/insert_cart.php", {
-        method: "POST",
-        body: formData,
-    });
-
 }
