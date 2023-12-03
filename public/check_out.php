@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderCode = rand(100000, 999999);
             $orders = array(
                 'code' => $orderCode,
-                'status' => 'chưa giao',
+                'status' => 'Handle',
                 'users_id' => $_SESSION['users_id'],
                 'phone' => $_POST['phone'],
                 'address' => $_POST['address'],
@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Thực hiện lệnh INSERT cho order_items
                 insert_order_items($orderItems);
             }
-            header('Location: home.php');
+            unset($_SESSION['cart']);
+            header('Location: order.php');
         } else {
             header('Location: account.php');
         }

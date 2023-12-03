@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body class="font-poppins ">
+<body class="font-poppins">
     <div class="warapper relative ">
         <!-- search -->
         <?php include "./view/inc/search.php" ?>
@@ -43,29 +43,68 @@
                 </div>
                 <!--  -->
                 <div class="max-w-[73.125rem] m-auto mt-[60px] ">
-                    <table class="border w-full">
-                        <thead class="border-b w-full">
-                            <tr class=" w-full">
-                                <th class="p-4 ">Order</th>
-                                <th class="p-4 ">Date</th>
-                                <th class="p-4 ">Status</th>
-                                <th class="p-4 ">Total</th>
-                                <th class="p-4 ">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($order as $itemOrder){ ?>
-                                <tr class="border-b ">
-                                <td class="p-4 text-center">#<?php echo $itemOrder['code'] ?></td>
-                                <td class="p-4 text-center"><?php echo $itemOrder['date'] ?></td>
-                                <td class="p-4 text-center"><?php echo $itemOrder['status'] ?></td>
-                                <td class="p-4 text-center">$<?php echo $itemOrder['total'] ?>.000 for <?php echo $itemOrder['number'] ?> item </td>
-                                <td class="p-4 text-center">view</td>
-                            </tr>
-                           <?php } ?>
-                            
-                        </tbody>
-                    </table>
+                    <div class="w-full justify-center items-center text-center">
+                       
+                            <ul class="w-auto text-center">
+                                <li class="mt-2 font-bold text-start">Information :</li>
+                                <li class="text-start">Email :
+                                    <?php echo $_SESSION['email'] ?>
+                                </li>
+                                <li class="text-start">Phone :
+                                <?php foreach ($order as $itemOrder) { ?> 
+                                    0<?php echo $itemOrder['phone'] ?>
+                                <?php } ?>
+                                </li>
+                                <li class="text-start">ID :
+                                    <?php echo $_SESSION['users_id'] ?>
+                                </li>
+                                <li class="text-start">Address:
+                                <?php foreach ($order as $itemOrder) { ?> 
+                                    <?php echo $itemOrder['address'] ?>
+                                <?php } ?>
+                                </li>
+                            </ul>
+                    </div>
+                    <div class="mt-5">
+                        <table class="border-2 border-black w-full ">
+                            <thead class="border-b w-full">
+                                <tr class=" w-full border-black border-b ">
+                                    <th class="p-4 ">Order</th>
+                                    <th class="p-4 ">Date</th>
+                                    <th class="p-4 ">Status</th>
+                                    <th class="p-4 ">Total</th>
+                                    <th class="p-4 ">Name products</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php foreach ($order as $itemOrder) { ?>
+                                    <tr class="border-b border-black ">
+                                        <td class="p-4 text-center">#
+                                            <?php echo $itemOrder['code'] ?>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <?php echo $itemOrder['date'] ?>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <?php echo $itemOrder['status'] ?>
+                                        </td>
+                                        <td class="p-4 text-center">$
+                                            <?php echo $itemOrder['total'] ?>.000 for
+                                            <?php echo $itemOrder['number'] ?> item
+                                        </td>
+
+                                        <td class="p-4 text-center">
+                                            <?php foreach ($itemOrder['name'] as $productName): ?>
+                                                <?php echo $productName; ?><br>
+                                            <?php endforeach; ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </main>
             <?php include "./view/inc/footer.php" ?>
