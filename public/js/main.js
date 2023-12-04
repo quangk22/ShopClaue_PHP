@@ -64,25 +64,47 @@ document.addEventListener("DOMContentLoaded", function () {
     const decreaseButtons = document.querySelectorAll('.decreaseButton');
     const increaseButtons = document.querySelectorAll('.increaseButton');
 
-    // Sử dụng một mảng để lưu trữ giá trị cho mỗi nút
-    let currentValues = Array.from({ length: numberInputs.length }, () => 1);
-
-    // Xử lý sự kiện khi nút "-" được nhấn
-    decreaseButtons.forEach(function(button, index) {
-        button.onclick = function () {
-            if (currentValues[index] > 1) {
-                currentValues[index]--;
-                numberInputs[index].value = currentValues[index];
-            }
-        };
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
+    
+    function handleInputChange(index, event) {
+        const input = numberInputs[index];
+        const value = parseInt(input.value, 10);
+    
+        if (!isNaN(value)) {
+            input.value = clamp(value, 1, Infinity);
+        }
+    }
+    
+    function handleDecreaseClick(index, event) {
+        const input = numberInputs[index];
+        const value = parseInt(input.value, 10);
+    
+        if (!isNaN(value) && value > 1) {
+            input.value = value - 1;
+        }
+    }
+    
+    function handleIncreaseClick(index, event) {
+        const input = numberInputs[index];
+        const value = parseInt(input.value, 10);
+    
+        if (!isNaN(value)) {
+            input.value = value + 1;
+        }
+    }
+    
+    numberInputs.forEach((input, index) => {
+        input.addEventListener('input', handleInputChange.bind(null, index));
     });
-
-    // Xử lý sự kiện khi nút "+" được nhấn
-    increaseButtons.forEach(function(button, index) {
-        button.onclick = function () {
-            currentValues[index]++;
-            numberInputs[index].value = currentValues[index];
-        };
+    
+    decreaseButtons.forEach((button, index) => {
+        button.addEventListener('click', handleDecreaseClick.bind(null, index));
+    });
+    
+    increaseButtons.forEach((button, index) => {
+        button.addEventListener('click', handleIncreaseClick.bind(null, index));
     });
 });
 // 

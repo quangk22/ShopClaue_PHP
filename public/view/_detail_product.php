@@ -94,7 +94,7 @@
                                                                 value="<?php echo $product['image']; ?>">
                                                             <input type="hidden" name="productPrice"
                                                                 value="<?php echo $product['price']; ?>">
-                                                            <input type="number" value="1" name="quantity"
+                                                            <input type="text" value="1" name="quantity"
                                                                 class="outline-none w-full flex text-center bg-transparent customNumberInput"
                                                                 id="customNumberInput">
                                                             <div

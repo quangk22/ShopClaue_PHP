@@ -10,9 +10,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 destroy();
                 break;
             case 'create':
+                
                 create();
                 break;
             case 'update':
+                // var_dump($_POST);
                 update();
                 break;
         }
@@ -42,7 +44,7 @@ function create(){
          */
         for ($i = 0; $i < count($cart); $i++) {
             if ($cart[$i]['productId'] == $_POST['productId']) {
-                $cart[$i]['quantity'] = $cart[$i]['quantity'] + 1;
+                $cart[$i]['quantity'] = $cart[$i]['quantity'] + $_POST['quantity'];
                 $isEmpty = false;
                 break;
             }
@@ -58,7 +60,7 @@ function create(){
             'productName' => $_POST['productName'],
             'productImage' => $_POST['productImage'],
             'productPrice' => $_POST['productPrice'],
-            'quantity' => $_POST['quantity'],
+            'quantity' =>  $_POST['quantity'],
         );
         array_push($cart, $order_item);
     }
@@ -79,6 +81,20 @@ function destroy(){
     $_SESSION['cart'] = $cart;
 }
 function update(){
+    if (isset($_POST['productId']) && isset($_POST['quantityUpdate'])) {
+        $productId = $_POST['productId'];
+        $newQuantity = $_POST['quantityUpdate'];
 
+        $cart = $_SESSION['cart'];
+
+        for ($i = 0; $i < count($cart); $i++) {
+            if ($cart[$i]['productId'] == $productId) {
+                $cart[$i]['quantity'] = $newQuantity;
+                break;
+            }
+        }
+
+        $_SESSION['cart'] = $cart;
+    }
 }
 ?>

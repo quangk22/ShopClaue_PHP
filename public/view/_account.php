@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']); // Xóa thông báo sau khi sử dụng để tránh hiển thị lại
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,16 +45,17 @@
 
                         </div>
                     </div>
-                    <?php if (isset($message) && !empty($message)): ?>
+                    <?php if (!empty($message)): ?>
                         <div class="message text-red-400">
                             <div
                                 class="bg-[#f2dede] border border-[#f2dede] flex px-[50px] py-[30px] w-full text-sm max-sm:p-5 flex-nowrap max-w-[73.125rem] m-auto mt-[60px]">
-                                <span class="text-[#31708f] mr-1"> Error: An account is already registered with your email
-                                    address.</span>
+                                <span class="text-[#31708f] mr-1"> <?php echo $message ?></span>
 
                             </div>
                         </div>
                     <?php endif; ?>
+
+
                     <?php if (isset($error_message) && !empty($error_message)): ?>
                         <div class="message text-red-400">
                             <div

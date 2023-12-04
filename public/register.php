@@ -3,7 +3,7 @@ include_once '../core/db/db_products.php';
 include_once '../core/db/db_order_items.php';
 include_once '../core/db/db_users.php';
 session_start();
-$message ='';
+$message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['dk_email']) && isset($_POST['dk_password'])) {
         $email = $_POST['dk_email'];
@@ -13,29 +13,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $existingUser = get_by_email_users($email);
 
         if ($existingUser) {
-            $message = 'Email đã tồn tại';
-            include_once './view/_account.php';
-            exit(); // Kết thúc kịch bản ngay sau khi chuyển hướng
+            $_SESSION['message'] = 'Error: An account is already registered with your email address.';
+            header('Location: account.php');
+            exit();
         } else {
+            // Xử lý đăng ký người dùng
             $user = array(
                 'email' => $email,
                 'password' => $password,
                 'role' => "user",
             );
-            $_SESSION['email'] = $email;
-            $_SESSION['password'] = $password;
-            // Gọi hàm insert_users và lưu ý kết quả
-            $userInserted = insert_users($user);
 
-            if ($userInserted) {
-                // Gọi header trước khi xuất thông điệp
-                header('Location: account.php');
-                exit(); // Kết thúc kịch bản ngay sau khi chuyển hướng
-            } else {
-                $message = 'Có lỗi khi đăng ký người dùng. Vui lòng thử lại.';
-                header('Location: account.php');
-                exit(); // Kết thúc kịch bản ngay sau khi chuyển hướng
-            }
+            insert_users($user);
+
+
+            $_SESSION['message'] = 'Registration successful, please fill in the login form';
+            header('Location: account.php');
+            exit();
+
         }
     }
 }

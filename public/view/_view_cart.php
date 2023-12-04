@@ -102,16 +102,27 @@
                                             <td class="p-4 text-center relative max-md:hidden">
                                                 <div
                                                     class="border-2 border-black rounded-full w-[115px]  p-2 float-none justify-center flex items-center text-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2">
-                                                    <input type="number" value="1" name="quantity"
-                                                        class="outline-none w-full flex text-center ml-2 bg-transparent customNumberInput"
-                                                        id="customNumberInput">
-                                                    <div
-                                                        class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                        <div class="ml-3 decreaseButton" id="decreaseButton"><i
-                                                                class="fa-solid fa-minus"></i></div>
-                                                        <div class="mr-3 increaseButton" id="increaseButton"><i
-                                                                class="fa-solid fa-plus"></i></div>
-                                                    </div>
+                                                    <form method="post" action="cart.php">
+                                                        <input type="hidden" name="productId"
+                                                            value="<?php echo $item['productId']; ?>">
+                                                        <input type="hidden" name="_method" value="update">
+                                                        <input type="number" value="<?php echo $item['quantity'] ?>"
+                                                            name="quantityUpdate"
+                                                            class="outline-none w-full flex text-center ml-2 bg-transparent customNumberInput"
+                                                            id="customNumberInput">
+
+                                                        <div
+                                                            class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
+                                                            <button type="submit" class="ml-3 decreaseButton"
+                                                                id="decreaseButton">
+                                                                <i class="fa-solid fa-minus"></i>
+                                                            </button>
+                                                            <button type="submit" class="mr-3 increaseButton"
+                                                                id="increaseButton">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </td>
 
@@ -146,9 +157,15 @@
                                                     class="border-2 border-black p-2 px-7 font-semibold rounded-full max-md:w-full max-md:mt-5">
                                                     Apply coupon</button>
                                             </div>
-                                            <button
-                                                class="border-2  float-right font-semibold rounded-full p-2 px-7 text-[#878787]  max-md:float-none max-md:w-full max-md:mt-5">Update
-                                                Cart</button>
+                                            <form method="post" action="cart.php">
+                                                <input type="hidden" name="_method" value="update">
+                                                <input type="hidden" name="productId"
+                                                    value="<?php echo $item['productId']; ?>">
+                                                <button class="border-2 border-black  float-right font-semibold rounded-full 
+                                                p-2 px-7  max-md:float-none max-md:w-full max-md:mt-5">
+                                                    Update Cart
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -161,7 +178,7 @@
                                             <tr class="border-b ">
                                                 <th class="text-left p-4">Subtotal</th>
                                                 <td data-title="Subtotal" class="text-end p-4">
-                                                    <span class=""><bdi>
+                                                    <span class="">$<bdi>
                                                             <?php
                                                             $totalPrice = 0;
                                                             foreach ($cart as $item) {
@@ -177,18 +194,13 @@
                                                 <td class="text-end p-4">
                                                     <ul>
                                                         <li>
-                                                            <input type="checkbox">
+
                                                             <label for="">
                                                                 Local Pickup:
                                                                 <span> <bdi>$</bdi>15.00 </span>
                                                             </label>
                                                         </li>
-                                                        <li class="my-2">
-                                                            <input type="checkbox">
-                                                            <label for="">
-                                                                Free Shipping
-                                                            </label>
-                                                        </li>
+
                                                     </ul>
                                                     <p class="hover:text-[#56CFE1]"><a href="#">Calculate shipping</a>
                                                     </p>
@@ -198,13 +210,13 @@
                                                 <th class="text-left p-4">Total</th>
                                                 <td data-title="Total" class="text-end p-4">
                                                     <strong>
-                                                        <span class=""><bdi><span class=""></span>
+                                                        <span class=""><bdi><span class="">$</span>
                                                                 <?php
                                                                 $totalPrice = 0;
                                                                 foreach ($cart as $item) {
                                                                     $totalPrice += $item['productPrice'] * $item['quantity'];
                                                                 }
-                                                                echo number_format($totalPrice, 3);
+                                                                echo number_format($totalPrice + 15, 3);
                                                                 ?>
 
                                                             </bdi></span>

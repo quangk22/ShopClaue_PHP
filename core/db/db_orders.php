@@ -118,7 +118,7 @@ function get_all_by_order($userId)
     $sql = "SELECT `orders`.`id`, users_id, code, status, `date`, address,
     GROUP_CONCAT(products.name) as product_names,
     SUM(products.price) as total, phone,
-    COUNT(order_id) as number
+    SUM(order_items.quantity) as number
     FROM `orders`
     JOIN order_items ON `orders`.`id` = order_items.order_id
     JOIN products ON order_items.product_id = products.id
