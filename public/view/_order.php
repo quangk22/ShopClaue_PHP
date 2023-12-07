@@ -50,55 +50,57 @@
                                 <li class="text-start">Email :
                                     <?php echo $_SESSION['email'] ?>
                                 </li>
-                                <li class="text-start">Phone :
-                                <?php foreach ($order as $itemOrder) { ?> 
-                                    0<?php echo $itemOrder['phone'] ?>
-                                <?php } ?>
-                                </li>
+                               
                                 <li class="text-start">ID :
                                     <?php echo $_SESSION['users_id'] ?>
                                 </li>
-                                <li class="text-start">Address:
-                                <?php foreach ($order as $itemOrder) { ?> 
-                                    <?php echo $itemOrder['address'] ?>
-                                <?php } ?>
+                               
                                 </li>
                             </ul>
                     </div>
                     <div class="mt-5">
-                        <table class="border-2 border-black w-full ">
+                        <table class="border-collapse border border-slate-400 w-full table-auto">
                             <thead class="border-b w-full">
                                 <tr class=" w-full border-black border-b ">
-                                    <th class="p-4 ">Order</th>
-                                    <th class="p-4 ">Date</th>
-                                    <th class="p-4 ">Status</th>
-                                    <th class="p-4 ">Total</th>
-                                    <th class="p-4 ">Name products</th>
+                                    <th class="p-4 border border-slate-300 ">Order</th>
+                                    <th class="p-4 border border-slate-300 ">Date</th>
+                                    <th class="p-4 border border-slate-300 ">Status</th>
+                                    <th class="p-4 border border-slate-300 ">Phone</th>
+                                    <th class="p-4 border border-slate-300 ">Address</th>
+                                    <th class="p-4 border border-slate-300 ">Total</th>
+                                    <th class="p-4 border border-slate-300 ">Name products</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <?php foreach ($order as $itemOrder) { ?>
                                     <tr class="border-b border-black ">
-                                        <td class="p-4 text-center">#
+                                        <td class="p-4 text-center border border-slate-300">#
                                             <?php echo $itemOrder['code'] ?>
                                         </td>
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center border border-slate-300">
                                             <?php echo $itemOrder['date'] ?>
                                         </td>
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center border border-slate-300">
                                             <?php echo $itemOrder['status'] ?>
                                         </td>
-                                        <td class="p-4 text-center">$
+                                        <td class="p-4 text-center border border-slate-300">
+                                            <?php echo $itemOrder['phone'] ?>
+                                        </td>
+                                        <td class="p-4 text-center border border-slate-300 max-w-[150px] overflow-x-auto">
+                                            <?php echo $itemOrder['address'] ?>
+                                        </td>
+                                        <td class="p-4 text-center border border-slate-300">$
                                             <?php echo $itemOrder['total'] ?>.000 for
                                             <?php echo $itemOrder['number'] ?> item
                                         </td>
 
-                                        <td class="p-4 text-center">
+                                        <td class="p-4 text-center border border-slate-300">
                                             <?php foreach ($itemOrder['name'] as $productName): ?>
                                                 <?php echo $productName; ?><br>
                                             <?php endforeach; ?>
                                         </td>
+                                        
                                     </tr>
                                 <?php } ?>
 

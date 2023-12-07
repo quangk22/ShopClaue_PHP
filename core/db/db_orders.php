@@ -19,6 +19,7 @@ function get_all_order()
 
     // Lặp kết quả
     foreach ($result as $row) {
+        $formattedDate = date('d/m/Y', strtotime($row['date']));
         $orders = array(
             'id' => $row['id'],
             'code' => $row['code'],
@@ -26,7 +27,7 @@ function get_all_order()
             'users_id' => $row['users_id'],
             'phone' => $row['phone'],
             'address' => $row['address'],
-            'date' => $row['date'],
+            'date' =>  $formattedDate,
         );
         array_push($orders_list, $orders);
     }
@@ -99,7 +100,7 @@ function get_orders($orders_id)
 function update_orders($orders)
 {
     global $pdo;
-    $sql = "UPDATE ORDERS SET CODE=:code, STATUS=:status, USERS_ID=:users_id WHERE ID=:id";
+    $sql = "UPDATE ORDERS SET CODE=:code, STATUS=:status, USERS_ID=:users_id, ADDRESS=:address, PHONE=:phone WHERE ID=:id";
     $stmt = $pdo->prepare($sql);
 
 
@@ -107,6 +108,9 @@ function update_orders($orders)
     $stmt->bindParam(':code', $orders['code']);
     $stmt->bindParam(':status', $orders['status']);
     $stmt->bindParam(':users_id', $orders['users_id']);
+    $stmt->bindParam(':address', $orders['address']);
+    $stmt->bindParam(':phone', $orders['phone']);
+
 
     $stmt->execute();
 }
@@ -115,7 +119,7 @@ function get_all_by_order($userId)
 {
     global $pdo;
 
-    $sql = "SELECT `orders`.`id`, users_id, code, status, `date`, address,
+    $sql = "SELECT `orders`.`id`, users_id, code, status,DATE_FORMAT(`date`, '%d/%m/%Y') as datee, address,
     GROUP_CONCAT(products.name) as product_names,
     SUM(products.price) as total, phone,
     SUM(order_items.quantity) as number
@@ -144,7 +148,7 @@ function get_all_by_order($userId)
             'id' => $row['id'],
             'code' => $row['code'],
             'status' => $row['status'],
-            'date' => $row['date'],
+            'date' => $row['datee'],
             'total' => $row['total'],
             'number' => $row['number'],
             'users_id' => $row['users_id'],

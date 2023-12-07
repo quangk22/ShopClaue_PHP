@@ -1,4 +1,3 @@
-
 <header>
   <div class="header1  bg-[#f6f6f8] text-[#878787] text-sm py-3 px-5 z-50">
     <div class="grid grid-cols-3  max-lg:grid-cols-2 max-md:grid-cols-none  max-md:grid-rows-2 ">
@@ -328,7 +327,7 @@
 
         <!-- Account -->
         <li class="max-md:hidden">
-          <?php if (  isset($_SESSION['email']) && $_SESSION['email'] != "" ) { ?>
+          <?php if(isset($_SESSION['email']) && $_SESSION['email'] != "") { ?>
             <a href="#">
               <div class="relative group w-full ">
                 <i class="fa-regular fa-user fa-xs"></i>
@@ -336,19 +335,35 @@
                   class="absolute right-[-84.5px] top-9 w-[150px] h-full group-hover:top-[40px]  invisible opacity-0 group-hover:opacity-100 group-hover:visible  transition-all ease-in-out duration-500  z-20 border-b  border-gray-200">
                   <li
                     class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
-                    <?php echo $_SESSION['email'] ?></li>
+                    <?php echo $_SESSION['email'] ?>
+                  </li>
+                  <a href="order.php">
                     <li
-                    class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
-                  <a href="order.php"> My order </a> </li>
-                  <li
-                    class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
-                   <a href="logout.php">Đăng xuất</a> </li>
+                      class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
+                      My order
+                    </li>
+                  </a>
+                  <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
+                    <a href="../admin/index.php">
+                      <li
+                        class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
+                        ADMIN
+                      </li>
+                    </a>
+                  <?php } ?>
+                  <a href="logout.php">
+                    <li
+                      class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
+                      Đăng xuất
+                    </li>
+                  </a>
+
                 </ul>
               </div>
             </a>
           <?php } else { ?>
             <a href="account.php">
-            <i class="fa-regular fa-user fa-xs"></i> </a>
+              <i class="fa-regular fa-user fa-xs"></i> </a>
           <?php } ?>
         </li>
 

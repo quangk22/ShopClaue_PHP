@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
                     $_SESSION['users_id'] = $user['id'];
+                    $_SESSION['role'] = $user['role'];
                     $check_login = true;
                 }
             }

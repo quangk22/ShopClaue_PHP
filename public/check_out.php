@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderCode = rand(100000, 999999);
             $orders = array(
                 'code' => $orderCode,
-                'status' => 'Handle',
+                'status' => 'pending',
                 'users_id' => $_SESSION['users_id'],
                 'phone' => $_POST['phone'],
                 'address' => $_POST['address'],
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 function get_last_inserted_order_id() {
-    global $pdo; // Biến PDO cần được khai báo ở đây, thay thế bằng biến PDO của bạn
+    global $pdo; 
     return $pdo->lastInsertId();
 }
 ?>

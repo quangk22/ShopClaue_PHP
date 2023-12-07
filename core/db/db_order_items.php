@@ -124,4 +124,15 @@ function get_all_total(){
     
     return $orders_list;
 }
+
+function delete_by_order_items($order_id){
+    global $pdo;
+
+    $sql = "DELETE FROM ORDER_ITEMS WHERE ORDER_ID=:order_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':order_id', $order_id);
+
+    $stmt->execute();
+
+}
 ?>
