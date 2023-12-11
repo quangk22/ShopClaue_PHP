@@ -201,9 +201,12 @@ const myForm = document.getElementById('myForm');
 openFormButton.addEventListener('click', function () {
     myForm.classList.remove('hidden');
 })
-closeFormButton.addEventListener('click', function () {
-    myForm.classList.add('hidden');
-})
+if(closeFormButton){
+    closeFormButton.addEventListener('click', function () {
+        myForm.classList.add('hidden');
+    })
+}
+
 // chi tiết SP
 
 // 
@@ -352,19 +355,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const closeCart = document.getElementById('close_cart');
-closeCart.addEventListener('click', function () {
-    const cart_mini = document.getElementById('cart_mini2');
-    const showCart = document.getElementById('cart_mini');
-    cart_mini.style.transform = 'translateX(320px)';
-    cart_mini.style.transition = 'transform 500ms ease-in';
+if (closeCart) {
+    closeCart.addEventListener('click', function () {
+        const cart_mini = document.getElementById('cart_mini2');
+        const showCart = document.getElementById('cart_mini');
+        cart_mini.style.transform = 'translateX(320px)';
+        cart_mini.style.transition = 'transform 500ms ease-in';
+    
+        setTimeout(function () {
+            if (showCart) {
+                showCart.classList.add('hidden');
+            }
+            reloadCartContent();
+        }, 500);
+    });
+}
 
-    setTimeout(function () {
-        if (showCart) {
-            showCart.classList.add('hidden');
-        }
-        reloadCartContent();
-    }, 500);
-});
 // -----------------------------------
 function quickShop(image, name, price,id) {
     var imageProduct = document.getElementById('imageProduct');
@@ -393,3 +399,11 @@ function close_detail() {
     MotaSP.classList.add('hidden');
     console.log("đã click");
 }
+// search
+document.getElementById("search").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("searchForm").submit();
+    }
+});
+

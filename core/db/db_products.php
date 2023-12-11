@@ -104,4 +104,48 @@ function update_products($products){
     
     $stmt->execute();
 }
+
+function get_all_by_products(){
+    global $pdo;
+
+    $sql = "SELECT sum(quantity) as quantity
+    FROM products;";
+    $stmt = $pdo->prepare($sql);
+    
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+     
+    $products_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $products= array(       
+            'quantity' => $row['quantity'],    
+        );
+        array_push($products_list, $products);
+    }
+    
+    return $products_list;
+}
+function get_search_products($search){
+    global $pdo;
+
+    $sql = "SELECT * FROM products WHERE name LIKE :search";
+    $stmt = $pdo->prepare($sql);
+
+    // Sử dụng bindValue thay vì bindParam để tránh lỗi
+    $stmt->bindValue(':search', "%$search%", PDO::PARAM_STR);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+
+    return $result;
+}
 ?>

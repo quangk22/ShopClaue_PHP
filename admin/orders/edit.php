@@ -19,6 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $order_id = $_GET['order_id'];
     $order = get_orders($order_id);
-
+    
     include_once '../view/orders/_edit.php';
 }

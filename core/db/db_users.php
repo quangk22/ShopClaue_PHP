@@ -116,4 +116,30 @@ function get_by_email_users($email){
 
     return null;
 }
+function get_all_users_customers(){
+    global $pdo;
+
+    $sql = "SELECT COUNT(id) as user
+    FROM users
+    WHERE ROLE = 'user';";
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+     
+    $users_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $users= array(
+            'user' => $row['user']
+        );
+        array_push($users_list, $users);
+    }
+    
+    return $users_list;
+}
 ?>

@@ -68,9 +68,13 @@
                     " style="background-image: url(./media/img/baner-shop.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
                         </div>
                         <div
-                            class="font-poppins absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white block  text-center w-full py-[50px]">
-                            <h1 class="text-xl">Shop All Products</h1>
-                            <p class="mt-[5px] text-sm">Online fashion, furniture, handmade... store</p>
+                            class="font-poppins  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white block  text-center w-full py-[50px]">
+                            
+                                <h1 class="text-xl">Search Results for :</h1>
+                                <p class="mt-[5px] ml- text-xl">
+                                    <?php echo $search ?>
+                                </p>
+                           
                         </div>
                     </div>
                     <div class="containre-product w-[73.125rem] px-5 m-auto max-lg:w-[46rem]  max-w-full mt-[30px] ">
@@ -93,93 +97,16 @@
                         <div class="product mt-[30px]  z-0">
                             <div class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500 mt-10 mb-10"
                                 id="product1">
-                                <?php foreach($productList as $product) { ?>
-                                    <div class="item">
-                                        <div class="product-img relative group">
-                                            <div class="img">
-                                                <a href="detail_product.php?id=<?php echo $product['id']; ?>"
-                                                    class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                    <img src="./media/img/<?php echo $product['image']; ?>.jpg"
-                                                        alt="" loading="lazy">
-                                                </a>
-                                                <a href="detail_product.php?id=<?php echo $product['id']; ?>"
-                                                    class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                    <img src="./media/img/id11.jpg" alt="" loading="lazy">
-                                                </a>
-                                            </div>
-                                            <div class="absolute top-3 left-3 max-lg:block ">
-                                                <a href="#" class="hidden group-hover:block max-lg:block">
-                                                    <div class="block max-lg:block">
-                                                        <div class="max-lg:block"><i
-                                                                class="fa-regular fa-heart fa-lg text-white "></i>
-                                                        </div>
-                                                        <div class=" lg:hidden  max-md:block ">
-                                                            <i class="fa-solid fa-eye fa-lg text-white quickShop"></i>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div
-                                                class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
-                                                <div
-                                                    class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
-                                                    <a href="detail_product.php?id=<?php echo $product['id']; ?>"
-                                                        class="whitespace-nowrap">Selec options</a>
-                                                </div>
-                                                <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
-                                                    onclick="quickShop('<?php echo $product['image']; ?>','<?php echo $product['name']; ?>','<?php echo $product['price']; ?>')">
-                                                    Quick Shop
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info mt-[15px] font-poppins text-sm  ">
-                                            <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
-                                                <a href="detail_product.php?id=<?php echo $product['id']; ?>">
-                                                    <?php echo $product['name']; ?>
-                                                </a>
-                                            </h3>
-                                            <span class="text-[#696969]">
-                                                $
-                                                <?php
-                                                $discount = 30;
-                                                $discountedPrice = $product['price'] - ($product['price'] * $discount / 100);
-                                                echo $discountedPrice ?>.000
-                                                -
-
-                                                $
-                                                <?php echo $product['price']; ?>.000
-                                            </span>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                            <!-- end product -->
-                            <!-- <div class="Btn Load More flex justify-center mt-[40px] mb-[60px]">
-                                <button
-                                    class="border-[2px] border-[#333] rounded-full px-11 py-3 hover:bg-[#56CFE1] hover:border-[#56CFE1] ">
-                                    <a href="" class="font-poppins text-sm"> Load More</a>
-                                </button>
-                            </div> -->
-                            <div class="mt-10">
-                                <div class="subheadLine-label uppercase tracking-widest text-black text-2xl font-poppins font-bold
-                                ">
-                                    <h1 class="flex justify-center items-center leading-none">best seller</h1>
-                                    <span
-                                        class="flex justify-center items-center text-[14px] text-gray-400 font-LibreBaskerville font-normal italic">Top
-                                        sale in this week</span>
-                                </div>
-                                <div class="product grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500 mt-10 mb-10"
-                                    id="bestSeller">
-                                    <?php for ($i = 0; $i < 8; $i++) { ?>
+                                <?php foreach ($searchResults as $product) { ?>                        
                                         <div class="item">
                                             <div class="product-img relative group">
                                                 <div class="img">
-                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
+                                                    <a href="detail_product.php?id=<?php echo $product['id']; ?>"
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/<?php echo $productList[$i]['image']; ?>.jpg"
-                                                            alt="" loading="lazy">
+                                                        <img src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                            loading="lazy">
                                                     </a>
-                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
+                                                    <a href="detail_product.php?id=<?php echo $product['id']; ?>"
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
                                                         <img src="./media/img/id11.jpg" alt="" loading="lazy">
                                                     </a>
@@ -200,36 +127,35 @@
                                                     class="product-btn  absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-2 gap-2 group-hover:opacity-100 opacity-0 group-hover:top-1/2 group-hover:transition-all group-hover:duration-300 max-lg:hidden">
                                                     <div
                                                         class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm">
-                                                        <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
+                                                        <a href="detail_product.php?id=<?php echo $product['id']; ?>"
                                                             class="whitespace-nowrap">Selec options</a>
                                                     </div>
                                                     <div class="bg-white hover:text-white hover:bg-black rounded-full py-[10px] px-6 font-poppins flex text-center text-sm justify-center cursor-pointer quickShop"
-                                                        onclick="quickShop('<?php echo $productList[$i]['image']; ?>','<?php echo $productList[$i]['name']; ?>','<?php echo $productList[$i]['price']; ?>','<?php echo $productList[$i]['id']; ?>')">
+                                                        onclick="quickShop('<?php echo $product['image']; ?>','<?php echo $product['name']; ?>','<?php echo $product['price']; ?>')">
                                                         Quick Shop
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="product-info mt-[15px] font-poppins text-sm  ">
                                                 <h3 class="text-sm hover:text-[#56CFE1] cursor-pointer">
-                                                    <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>">
-                                                        <?php echo $productList[$i]['name']; ?>
+                                                    <a href="detail_product.php?id=<?php echo $product['id']; ?>">
+                                                        <?php echo $product['name']; ?>
                                                     </a>
                                                 </h3>
                                                 <span class="text-[#696969]">
                                                     $
                                                     <?php
                                                     $discount = 30;
-                                                    $discountedPrice = $productList[$i]['price'] - ($productList[$i]['price'] * $discount / 100);
+                                                    $discountedPrice = $product['price'] - ($product['price'] * $discount / 100);
                                                     echo $discountedPrice ?>.000
                                                     -
 
                                                     $
-                                                    <?php echo $productList[$i]['price']; ?>.000
+                                                    <?php echo $product['price']; ?>.000
                                                 </span>
                                             </div>
                                         </div>
-                                    <?php } ?>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

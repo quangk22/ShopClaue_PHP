@@ -135,4 +135,33 @@ function delete_by_order_items($order_id){
     $stmt->execute();
 
 }
+function get_revenue(){
+    global $pdo;
+
+    $sql = "SELECT sum(price*quantity) as revenue
+    FROM orders,order_items
+    WHERE orders.id = order_items.order_id AND
+    status = 'delivered'
+    ;";
+    $stmt = $pdo->prepare($sql);
+    
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+     
+    $order_items_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row) {
+        $order_items = array(
+            'revenue' => $row['revenue']
+        );
+        array_push($order_items_list, $order_items);
+    }
+    
+    return $order_items_list;
+}
 ?>

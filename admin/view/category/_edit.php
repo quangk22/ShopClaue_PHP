@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Category - SB Admin</title>
-    <link rel="shortcut icon" href="../../public/img/logo/123.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../public/media/img/desktop2.png" type="">
     <link href="../../public/admin/css/style.css" rel="stylesheet" />
     <script src="../../public/admin/js/all.js" crossorigin="anonymous"></script>
 </head>

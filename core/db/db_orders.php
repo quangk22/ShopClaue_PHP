@@ -161,4 +161,77 @@ function get_all_by_order($userId)
 
     return $orders_list;
 }
+function get_all_order_delivered()
+{
+    global $pdo;
+
+    $sql = "SELECT COUNT(id) as number
+    FROM orders
+    WHERE STATUS = 'pending';";
+    $stmt = $pdo->prepare($sql);
+
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+
+    $orders_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row) {
+        $orders = array(
+            'number' => $row['number'],    
+        );
+        array_push($orders_list, $orders);
+    }
+
+    return $orders_list;
+}
+
+function get_all_by_orders()
+{
+    global $pdo;
+
+    $sql = "SELECT `orders`.`id`, users_id, code, status,DATE_FORMAT(`date`, '%d/%m/%Y') as datee, address,
+    GROUP_CONCAT(products.name) as product_names,
+    SUM(products.price) as total, phone,
+    SUM(order_items.quantity) as number
+    FROM `orders`
+    JOIN order_items ON `orders`.`id` = order_items.order_id
+    JOIN products ON order_items.product_id = products.id
+    GROUP BY code;";
+
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute();
+
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+
+    $orders_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row) {
+        $productNames = explode(',', $row['product_names']);
+        $orders = array(
+            'id' => $row['id'],
+            'code' => $row['code'],
+            'status' => $row['status'],
+            'date' => $row['datee'],
+            'total' => $row['total'],
+            'number' => $row['number'],
+            'users_id' => $row['users_id'],
+            'phone' => $row['phone'],
+            'address' => $row['address'],
+            'name' => $productNames,
+        );
+        array_push($orders_list, $orders);
+    }
+
+    return $orders_list;
+}
 ?>
