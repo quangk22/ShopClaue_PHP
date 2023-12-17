@@ -344,7 +344,7 @@
                     </li>
                   </a>
                   <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
-                    <a href="../admin/statistics/index.php">
+                    <a href="./admin/statistics/index.php">
                       <li
                         class="text-sm text-[#878787] bg-white bg-opacity-90 hover:bg-white hover:text-black cursor-pointer p-2 flex justify-center">
                         ADMIN
