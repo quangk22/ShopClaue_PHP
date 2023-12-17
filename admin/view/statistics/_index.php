@@ -223,7 +223,7 @@
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
-                data: [500, 600, 700, 450, 800, 900, 1000, 1100, 1200, 1334, 1461, 1000],
+                data: [5, 6, 7, 4, 8, 9, 1, 11, 12, 13, 14, 10],
             }]
         };
 
@@ -252,7 +252,7 @@
     </script>
     <script>
         // Dữ liệu mẫu (doanh thu theo các tháng)
-
+        
         var revenueData = {
             labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
             datasets: [{
@@ -260,7 +260,7 @@
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
-                data: [5000, 6000, 7000, 4500, 8000, 9000, 10000, 11000, 12000, 13340, 14610, 12000],
+                data: [5, 6, 7, 4, 8, 9, 1, 11, 12, 13, 14, 10],
             }]
         };
 

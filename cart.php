@@ -94,6 +94,7 @@ function update(){
         }
 
         $_SESSION['cart'] = $cart;
+       
     }
 }
 ?>

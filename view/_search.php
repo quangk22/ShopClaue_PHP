@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../public/css/output.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="shortcut icon" type="image/png" href="./media/img/desktop2.png" class="tab-icon">
+    <link rel="shortcut icon" type="image/png" href="./public/media/img/desktop2.png" class="tab-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         ::-webkit-scrollbar {
@@ -65,7 +65,7 @@
                     </div>
                     <div class="relative ">
                         <div class="w-full h-full before:w-full before:bg-[rgba(0,0,0,.5)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 py-[75px]
-                    " style="background-image: url(./media/img/baner-shop.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
+                    " style="background-image: url(./public/media/img/baner-shop.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
                         </div>
                         <div
                             class="font-poppins  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white block  text-center w-full py-[50px]">
@@ -103,12 +103,12 @@
                                                 <div class="img">
                                                     <a href="detail_product.php?id=<?php echo $product['id']; ?>"
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                        <img src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""
                                                             loading="lazy">
                                                     </a>
                                                     <a href="detail_product.php?id=<?php echo $product['id']; ?>"
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/id11.jpg" alt="" loading="lazy">
+                                                        <img src="./public/media/img/id11.jpg" alt="" loading="lazy">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 max-lg:block ">
@@ -165,7 +165,7 @@
         </div>
     </div>
 
-    <script src="./js/main.js"></script>
+    <script src="./public/js/main.js"></script>
 
 </body>
 

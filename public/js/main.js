@@ -400,10 +400,14 @@ function close_detail() {
     console.log("đã click");
 }
 // search
-document.getElementById("search").addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("searchForm").submit();
-    }
-});
+var searchInput = document.getElementById("search");
 
+// Nếu phần tử tồn tại, thêm sự kiện
+if (searchInput) {
+    searchInput.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("searchForm").submit();
+        }
+    });
+}

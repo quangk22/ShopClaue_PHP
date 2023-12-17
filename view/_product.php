@@ -93,7 +93,7 @@
                         <div class="product mt-[30px]  z-0">
                             <div class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500 mt-10 mb-10"
                                 id="product1">
-                                <?php foreach($productList as $product) { ?>
+                                <?php foreach ($productList as $product) { ?>
                                     <div class="item">
                                         <div class="product-img relative group">
                                             <div class="img">

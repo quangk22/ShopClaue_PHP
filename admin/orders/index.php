@@ -10,6 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
         include_once '../view/orders/_index.php';
     }else{
-        header('Location: ../../public/home.php');
+        header('Location: ../../home.php');
     }
 }

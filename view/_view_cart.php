@@ -157,15 +157,16 @@
                                                     class="border-2 border-black p-2 px-7 font-semibold rounded-full max-md:w-full max-md:mt-5">
                                                     Apply coupon</button>
                                             </div>
-                                            <form method="post" action="cart.php">
+                                            <!-- <form method="post" action="cart.php">
                                                 <input type="hidden" name="_method" value="update">
                                                 <input type="hidden" name="productId"
                                                     value="<?php echo $item['productId']; ?>">
+                                                
                                                 <button class="border-2 border-black  float-right font-semibold rounded-full 
                                                 p-2 px-7  max-md:float-none max-md:w-full max-md:mt-5">
                                                     Update Cart
                                                 </button>
-                                            </form>
+                                            </form> -->
                                         </td>
                                     </tr>
                                 </tbody>
@@ -237,7 +238,7 @@
             <?php include "./view/inc/footer.php" ?>
         </div>
     </div>
-    <script src="./public/js/main.js"></script>
+     <script src="./public/js/main.js"></script>
 </body>
 
 </html>
