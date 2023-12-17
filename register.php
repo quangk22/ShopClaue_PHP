@@ -1,8 +1,6 @@
 <?php
-include_once '../core/db/db_products.php';
-include_once '../core/db/db_order_items.php';
-include_once '../core/db/db_users.php';
-session_start();
+include_once './core/db/boot.php';
+@session_start();
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['dk_email']) && isset($_POST['dk_password'])) {

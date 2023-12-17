@@ -377,7 +377,7 @@ function quickShop(image, name, price,id) {
     var nameProduct = document.getElementById('nameProduct');
     var priceProduct = document.getElementById('priceProduct');
 
-    imageProduct.src = "../public/media/img/" + image + ".jpg";
+    imageProduct.src = "./public/media/img/" + image + ".jpg";
     nameProduct.innerHTML = name;
     priceProduct.innerHTML = '$' + price + '.000';
     console.log("da lay");

@@ -50,7 +50,7 @@
       <ul class="flex items-center justify-end gap-8  text-[14px] text-black max-lg:hidden ">
         <!-- DEMO -->
         <li class=" group relative  ">
-          <a href="../public/home.php" class="p-2 inline-block  group-hover:border-white hover:text-[#56cfe1]">Demo</a>
+          <a href="home.php" class="p-2 inline-block  group-hover:border-white hover:text-[#56cfe1]">Demo</a>
           <div
             class="grid grid-cols-2 p-2  absolute left-0 top-[70px] group-hover:top-[48px] bg-white bg-opacity-90 w-max  invisible group-hover:opacity-100 group-hover:visible  transition-all ease-in-out duration-500 opacity-0 z-20 border border-gray-200">
             <!-- 1 -->
@@ -125,7 +125,7 @@
         </li>
         <!-- SHOP -->
         <li class="cursor-pointer py-1 hover:text-[#56cfe1] group relative">
-          <a href="../public/product.php"
+          <a href="product.php"
             class="group-hover:border-white before:content-['New'] before:text-white before:absolute before:bg-[#01bad4] before:top-[-8px] before:right-[-28px] before:text-[9px] before:py-[1px] before:px-[7px] before:rounded-full ">Shop</a>
           <ul
             class="absolute left-0 bg-white bg-opacity-90 w-max mt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-5 transition-all duration-500 z-20 border border-gray-200">

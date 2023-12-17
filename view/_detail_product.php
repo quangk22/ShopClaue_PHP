@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" type="image/png" href="./media/img/desktop2.png" class="tab-icon">
+    <link rel="shortcut icon" type="image/png" href="./public/media/img/desktop2.png" class="tab-icon">
     <style>
         ::-webkit-scrollbar {
             width: 0px;
@@ -58,13 +58,13 @@
                                     <div class="w-full">
                                         <div class="grid grid-cols-2 grid-rows-2 gap-3">
                                             <div class="image" id="imgProduct"><img
-                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                                    src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
                                             <div class="image" id="imgProduct"><img
-                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                                    src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
                                             <div class="image" id="imgProduct"><img
-                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                                    src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
                                             <div class="image" id="imgProduct"><img
-                                                    src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
+                                                    src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""></div>
                                         </div>
                                     </div>
                                     <div class="pl-8 max-md:pl-0 max-md:pt-3">
@@ -153,25 +153,25 @@
                                                 <div class="flex mb-5">
                                                     <div class="flex justify-center items-center">
                                                         <div class="image" id="imgProduct2"><img
-                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""
                                                                 class=" w-[70px] h-[70px] object-cover"></div>
                                                         <span class="px-1 text-[#878787]">+</span>
                                                     </div>
                                                     <div class="flex justify-center items-center">
                                                         <div class="image" id="imgProduct2"><img
-                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""
                                                                 class=" w-[70px] h-[70px] object-cover"></div>
                                                         <span class="px-1 text-[#878787]">+</span>
                                                     </div>
                                                     <div class="flex justify-center items-center">
                                                         <div class="image" id="imgProduct2"><img
-                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""
                                                                 class=" w-[70px] h-[70px] object-cover"></div>
                                                         <span class="px-1 text-[#878787]">+</span>
                                                     </div>
                                                     <div class="flex justify-center items-center">
                                                         <div class="image" id="imgProduct2"><img
-                                                                src="./media/img/<?php echo $product['image']; ?>.jpg" alt=""
+                                                                src="./public/media/img/<?php echo $product['image']; ?>.jpg" alt=""
                                                                 class=" w-[70px] h-[70px] object-cover"></div>
                                                     </div>
                                                 </div>
@@ -272,7 +272,7 @@
                                     </div>
                                     <div class="relative ">
                                         <div class=" ">
-                                            <img src="./media/img/look10.jpg" alt="" class="w-full">
+                                            <img src="./public/media/img/look10.jpg" alt="" class="w-full">
                                         </div>
                                         <div class="bg-[#65affa] rounded-full w-10 h-10 max-sm:w-7 max-sm:h-7 max-sm:text-[10px]  text-white flex justify-center items-center absolute top-[18%] left-[16%] group cursor-pointer  group-hover:opacity-5 "
                                             id="btn_1" onclick="toggleDisplay('btn_1')">
@@ -287,7 +287,7 @@
                                                 <div
                                                     class="before:content[''] before:w-4 before:h-4 before:bg-white before:top-0 before:left-1/2 before:-translate-y-1/2 before:absolute before:rotate-45 before:z-10 ">
                                                     <div class="w-[260px] p-3 text-black border-b  ">
-                                                        <img src="./media/img/Mercury_Tee32.jpg" alt=""
+                                                        <img src="./public/media/img/Mercury_Tee32.jpg" alt=""
                                                             class="w-full z-50">
                                                         <div class="">
                                                             <div class="flex justify-center items-center font-semibold">
@@ -427,12 +427,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p2-5-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p2-5-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p2-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p2-1-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -476,12 +476,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/calvinKlein.jpg" alt="">
+                                                        <img src="./public/media/img/calvinKlein.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/calvinKlein2.jpg" alt="">
+                                                        <img src="./public/media/img/calvinKlein2.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -519,13 +519,13 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/Bobbi_Chunky_Pom_Beanie2-300x383.jpg"
+                                                        <img src="./public/media/img/Bobbi_Chunky_Pom_Beanie2-300x383.jpg"
                                                             alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/Bobbi_Chunky_Pom_Beanie3-300x383.jpg"
+                                                        <img src="./public/media/img/Bobbi_Chunky_Pom_Beanie3-300x383.jpg"
                                                             alt="">
                                                     </a>
                                                 </div>
@@ -572,12 +572,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p8-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p8-1-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p8-4-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p8-4-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -624,12 +624,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/Mercury_Tee24-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/Mercury_Tee24-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/Mercury_Tee25-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/Mercury_Tee25-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -674,13 +674,13 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/Bobbi_Chunky_Pom_Beanie4-300x383.jpg"
+                                                        <img src="./public/media/img/Bobbi_Chunky_Pom_Beanie4-300x383.jpg"
                                                             alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/Bobbi_Chunky_Pom_Beanie5-300x383.jpg"
+                                                        <img src="./public/media/img/Bobbi_Chunky_Pom_Beanie5-300x383.jpg"
                                                             alt="">
                                                     </a>
                                                 </div>
@@ -728,12 +728,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p2-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p2-1-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p2-5-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p2-5-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -770,12 +770,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p7-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p7-1-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p7-2-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p7-2-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -812,12 +812,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p10-2-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p10-2-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p9-4-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p9-4-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -854,12 +854,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p4-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p4-1-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p4-3-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p4-3-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -896,12 +896,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p5-4-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p5-4-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p5-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p5-1-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -938,12 +938,12 @@
                                                 <div class="">
                                                     <a href=""
                                                         class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                                                        <img src="./media/img/p6-1-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p6-1-300x383.jpg" alt="">
                                                     </a>
                                                     <a href=""
                                                         class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100
                                             before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                                                        <img src="./media/img/p6-4-300x383.jpg" alt="">
+                                                        <img src="./public/media/img/p6-4-300x383.jpg" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="absolute top-3 left-3 ">
@@ -992,7 +992,7 @@
             <?php include "./view/inc/footer.php" ?>
         </div>
     </div>
-    <script src="../public/js/main.js"></script>
+    <script src="./public/js/main.js"></script>
 </body>
 
 </html>

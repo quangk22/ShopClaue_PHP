@@ -1,9 +1,7 @@
 <?php
-include_once '../core/db/db_products.php';
-include_once '../core/db/db_users.php';
-include_once '../core/db/db_order_items.php';
+include_once './core/db/boot.php';
 
-session_start();
+@session_start();
 $error_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['email']) && isset($_POST['password'])) {

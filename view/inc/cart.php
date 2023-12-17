@@ -14,11 +14,10 @@
                             <?php if (!empty($_SESSION['cart'])) { ?>
                                 <li class="flex mt-3 item_cart">
                                     <a href="#" class="flex text-[13px] relative">
-
                                         <div
                                             class="before:w-[70px] before:bg-[rgba(0,0,0,.5)] before:content-['X'] before:flex before:justify-center before:items-center before:text-white before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:hover:opacity-100 before:">
 
-                                            <img src="./media/img/<?php echo $item['productImage'] ?>.jpg" alt="" loading="lazy"
+                                            <img src="./public/media/img/<?php echo $item['productImage'] ?>.jpg" alt="" loading="lazy"
                                                 class="w-[70px] mr-2 ">
                                         </div>
 
@@ -65,17 +64,17 @@
             </div>
             <div class="flex justify-center items-center w-full">
                 <div class="w-full text-white text-sm">
-                    <a href="../public/cart.php">
+                    <a href="cart.php">
                         <p
                             class="mb-3 bg-[#222]  rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
                             view cart</p>
                     </a>
-                    <a href="../public/check_out.php">
+                    <a href="check_out.php">
                         <p
                             class="mb-3 bg-[#222] rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
                             checkout</p>
                     </a>
-                    <a href="../public/product.php">
+                    <a href="product.php">
                         <p
                             class="bg-[#222] rounded-full flex justify-center items-center py-2 uppercase font-normal hover:bg-[#56cfe1]">
                             continue shopping</p>

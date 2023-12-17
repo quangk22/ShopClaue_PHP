@@ -16,15 +16,15 @@
                             <img src="" alt="" loading="lazy " id="imageProduct" class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-2.jpg" alt="" loading="lazy"
+                            <img src="./public/media/img/ck-2.jpg" alt="" loading="lazy"
                                 class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-3.jpg" alt="" loading="lazy"
+                            <img src="./public/media/img/ck-3.jpg" alt="" loading="lazy"
                                 class="w-full h-[90vh] object-cover">
                         </div>
                         <div class="slideshow-image" ontouchstart="touchStart(event)">
-                            <img src="../public/media/img/ck-4.jpg" alt="" loading="lazy"
+                            <img src="./public/media/img/ck-4.jpg" alt="" loading="lazy"
                                 class="w-full h-[90vh] object-cover">
                         </div>
                     </div>
@@ -100,22 +100,22 @@
                                     you purchase 3 products</p>
                                 <div class="flex mb-5">
                                     <div class="flex justify-center items-center">
-                                        <img src="../public/media/img/ck-1-270x270.jpg" alt="" loading="lazy"
+                                        <img src="./public/media/img/ck-1-270x270.jpg" alt="" loading="lazy"
                                             class="w-[70px] h-[70px] object-cover">
                                         <span class="px-1 text-[#878787]">+</span>
                                     </div>
                                     <div class="flex justify-center items-center">
-                                        <img src="../public/media/img/p2-5-270x270.jpg" alt="" loading="lazy"
+                                        <img src="./public/media/img/p2-5-270x270.jpg" alt="" loading="lazy"
                                             class="w-[70px] h-[70px] object-cover">
                                         <span class="px-1 text-[#878787]">+</span>
                                     </div>
                                     <div class="flex justify-center items-center">
-                                        <img src="../public/media/img/p10-1-300x383.jpg" alt="" loading="lazy"
+                                        <img src="./public/media/img/p10-1-300x383.jpg" alt="" loading="lazy"
                                             class="w-[70px] h-[70px] object-cover">
                                         <span class="px-1 text-[#878787]">+</span>
                                     </div>
                                     <div class="flex justify-center items-center">
-                                        <img src="../public/media/img/p1-2-300x383.jpg " alt="" loading="lazy"
+                                        <img src="./public/media/img/p1-2-300x383.jpg " alt="" loading="lazy"
                                             class="w-[70px] h-[70px] object-cover">
                                     </div>
                                 </div>
@@ -178,7 +178,7 @@
                                 <a href="" class="px-3 text-sm"><i class="fa-brands fa-tumblr"></i></a>
                             </div>
                             <div class="mb-10 flex justify-start hover:text-[#56CFE1]">
-                                <a href="../public/detail_product.php" class="flex justify-center items-center">
+                                <a href="./public/detail_product.php" class="flex justify-center items-center">
                                     <span> View details </span>
                                     <i class="fa-solid fa-arrow-right ml-2"></i>
                                 </a>

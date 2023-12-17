@@ -9,7 +9,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" type="image/png" href="../public/media/img/desktop2.png" class="tab-icon">
+  <link rel="shortcut icon" type="image/png" href="./public/media/img/desktop2.png" class="tab-icon">
   <style>
     ::-webkit-scrollbar {
       width: 0px;
@@ -58,7 +58,7 @@
           <!-- Full-width images with number and caption text -->
           <!-- Slides_Show_1 -->
           <div class="mySlides fade relative  ">
-            <img loading="lazy" src="../public/media/img/slider1.png" class="w-full" alt="Slide 1">
+            <img loading="lazy" src="./public/media/img/slider1.png" class="w-full" alt="Slide 1">
             <div
               class=" absolute top-1/2 sm:-translate-x-1/2 -translate-x-1/2 left-1/3 sm:right-1 -translate-y-1/3 ml-5">
               <h4 class="text-[#878787] sm:text-[18px]  font-LibreBaskerville font-extrabold italic ">
@@ -82,7 +82,7 @@
           </div>
           <!-- Slides_Show_2 -->
           <div class="mySlides fade relative">
-            <img loading="lazy" src="../public/media/img/slider2.png" class="w-full" alt="Slide 2">
+            <img loading="lazy" src="./public/media/img/slider2.png" class="w-full" alt="Slide 2">
             <div class="text absolute top-[45%] right-14 -translate-y-1/3 max-sm:text- ">
               <h4 class="text-[#878787] sm:text-[18px] font-LibreBaskerville font-extrabold italic">2016 New Arrivals
               </h4>
@@ -102,7 +102,7 @@
           </div>
           <!-- Slides_Show_3 -->
           <div class="mySlides fade relative ">
-            <img loading="lazy" src="../public/media/img/slider3.png" class="w-full" alt="Slide 3">
+            <img loading="lazy" src="./public/media/img/slider3.png" class="w-full" alt="Slide 3">
             <div class="text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
               <h4 class="text-[#878787] sm:text-[18px] font-LibreBaskerville font-extrabold italic flex justify-center">
                 2016 New Arrivals </h4>
@@ -134,7 +134,7 @@
               <div class="  ">
                 <img
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-0 group-hover:scale-125"
-                  src="../public/media/img/women.jpg" alt="" />
+                  src="./public/media/img/women.jpg" alt="" />
               </div>
               <div
                 class="absolute flex bottom-10 left-1/2 -translate-x-1/2 items-center justify-center px-9 text-center">
@@ -150,7 +150,7 @@
                   <div class="">
                     <img
                       class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-0 group-hover:scale-125"
-                      src="../public/media/img/footer-wear-120x133.jpg" alt="" />
+                      src="./public/media/img/footer-wear-120x133.jpg" alt="" />
                   </div>
                   <div
                     class="absolute flex bottom-10 left-1/2 -translate-x-1/2 items-center justify-center px-9 text-center">
@@ -164,7 +164,7 @@
                   <div class="">
                     <img
                       class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-0 group-hover:scale-125"
-                      src="../public/media/img/anh 3.jpg" alt="" />
+                      src="./public/media/img/anh 3.jpg" alt="" />
                   </div>
                   <div
                     class="absolute flex bottom-10 left-1/2 -translate-x-1/2 items-center justify-center px-9 text-center">
@@ -179,7 +179,7 @@
                 <div class="">
                   <img
                     class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-0 group-hover:scale-125"
-                    src="../public/media/img/acessories1.jpg" alt="" />
+                    src="./public/media/img/acessories1.jpg" alt="" />
                 </div>
                 <div
                   class="absolute flex bottom-10 left-1/2 -translate-x-1/2 items-center justify-center px-9 text-center">
@@ -215,11 +215,11 @@
                       <div class="img">
                         <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                           class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                          <img src="./media/img/<?php echo $productList[$i]['image']; ?>.jpg" alt="" loading="lazy">
+                          <img src="./public/media/img/<?php echo $productList[$i]['image']; ?>.jpg" alt="" loading="lazy">
                         </a>
                         <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                           class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                          <img src="./media/img/id11.jpg" alt="" loading="lazy">
+                          <img src="./public/media/img/id11.jpg" alt="" loading="lazy">
                         </a>
                       </div>
                       <div class="absolute top-3 left-3 max-lg:block ">
@@ -281,7 +281,7 @@
               <div class=" lg:h-[300px] lg:w-[570px] md:h-[250px] md:w-[475px] ">
                 <img
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-0 group-hover:scale-125"
-                  src="../public/media/img/lookbook2016.jpg" alt="" />
+                  src="./public/media/img/lookbook2016.jpg" alt="" />
               </div>
 
               <div class="absolute inset-0 flex  flex-col items-center justify-center px-9 text-center ">
@@ -295,7 +295,7 @@
               <div class="lg:h-[300px] lg:w-[570px] md:h-[250px] md:w-[475px]">
                 <img
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-0 group-hover:scale-125"
-                  src="../public/media/img/summer-sale.jpg" alt="" />
+                  src="./public/media/img/summer-sale.jpg" alt="" />
               </div>
 
               <div class="absolute inset-0 flex  flex-col items-center justify-center px-9 text-center ">
@@ -328,11 +328,11 @@
                       <div class="img">
                         <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                           class="transition-opacity duration-300 ease-in-out group-hover:opacity-0">
-                          <img src="./media/img/<?php echo $productList[$i]['image']; ?>.jpg" alt="" loading="lazy">
+                          <img src="./public/media/img/<?php echo $productList[$i]['image']; ?>.jpg" alt="" loading="lazy">
                         </a>
                         <a href="detail_product.php?id=<?php echo $productList[$i]['id']; ?>"
                           class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 before:bg-[rgba(0,0,0,.1)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 before:w-full before:hidden before:group-hover:block before:transition-all before:duration-300">
-                          <img src="./media/img/id11.jpg" alt="" loading="lazy">
+                          <img src="./public/media/img/id11.jpg" alt="" loading="lazy">
                         </a>
                       </div>
                       <div class="absolute top-3 left-3 max-lg:block ">
@@ -402,7 +402,7 @@
             <!-- Content-1 -->
             <div class="big-card  h-full w-full ">
               <div class="  bg-cover bg-no-repeat bg-center ">
-                <img src="../public/media/img/blog-img1.jpg" alt="">
+                <img src="./public/media/img/blog-img1.jpg" alt="">
               </div>
               <div class="info  mt-[15px]">
                 <a class="text-[16px] font-bold uppercase" href="">Spring – Summer Trending 2017</a>
@@ -426,7 +426,7 @@
             <!-- Content-2 -->
             <div class="big-card  h-full w-full ">
               <div class="  bg-cover bg-no-repeat bg-center ">
-                <img src="../public/media/img/blog-img2.jpg" alt="">
+                <img src="./public/media/img/blog-img2.jpg" alt="">
               </div>
               <div class="info  mt-[15px] ">
 
@@ -452,7 +452,7 @@
             <!-- Content-3 -->
             <div class="big-card  h-full w-full">
               <div class="  bg-cover bg-no-repeat bg-center ">
-                <img src="../public/media/img/blog-img3.jpg" alt="">
+                <img src="./public/media/img/blog-img3.jpg" alt="">
               </div>
               <div class="info  mt-[15px]">
 
@@ -490,21 +490,21 @@
         <div class="follow-us w-full">
           <div
             class="grid grid-cols-2 snap-y snap-mandatory max-sm:h-[200px] max-md:h-[300px] overflow-scroll md:grid-cols-8   lg:grid-cols-8 mx-5 sm:mx-4   ">
-            <div> <img src="../public/media/img/follow-us-anh1.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh2.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh3.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh4.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh5.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh6.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh7.jpg" alt=""></div>
-            <div> <img src="../public/media/img/follow-us-anh8.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh1.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh2.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh3.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh4.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh5.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh6.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh7.jpg" alt=""></div>
+            <div> <img src="./public/media/img/follow-us-anh8.jpg" alt=""></div>
           </div>
 
         </div><!-- follow-us -->
       </main>
       <?php include "./view/inc/footer.php" ?>
     </div>
-    <script src="../public/js/main.js"></script>
+    <script src="./public/js/main.js"></script>
     <script>
       const circles = document.querySelectorAll('.circle');
       let activeCircle = null;
@@ -557,7 +557,7 @@
       });
     </script>
 
-    <!-- <script src="../public/js/Product.js"></script> -->
+    <!-- <script src="./public/js/Product.js"></script> -->
 
 </body>
 

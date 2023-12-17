@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" type="image/png" href="./media/img/desktop2.png" class="tab-icon">
+    <link rel="shortcut icon" type="image/png" href="./public/media/img/desktop2.png" class="tab-icon">
     <style>
         ::-webkit-scrollbar {
             width: 0px;
@@ -33,7 +33,7 @@
                 <div class="w-full">
                     <div class="relative ">
                         <div class="w-full h-full before:w-full before:bg-[rgba(0,0,0,.5)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 py-[75px]
-                    " style="background-image: url(./media/img/cart.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
+                    " style="background-image: url(./public/media/img/cart.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
                         </div>
                         <div
                             class="font-poppins absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white block  text-center w-full py-[50px]">
@@ -59,7 +59,7 @@
                                     <?php foreach ($cart as $item) { ?>
                                         <tr class="border-b ">
                                             <td class="p-4">
-                                                <img src="./media/img/<?php echo $item['productImage']; ?>.jpg" alt=""
+                                                <img src="./public/media/img/<?php echo $item['productImage']; ?>.jpg" alt=""
                                                     class="w-[100px]">
                                             </td>
                                             <td class="p-4 text-sm  ">
@@ -237,7 +237,7 @@
             <?php include "./view/inc/footer.php" ?>
         </div>
     </div>
-    <script src="./js/main.js"></script>
+    <script src="./public/js/main.js"></script>
 </body>
 
 </html>

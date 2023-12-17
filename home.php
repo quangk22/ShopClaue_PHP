@@ -1,7 +1,7 @@
 <?php 
-include_once '../core/db/db_products.php';
-include_once '../core/db/db_order_items.php';
-session_start();
+include_once './core/db/boot.php';
+
+@session_start();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
    
 }

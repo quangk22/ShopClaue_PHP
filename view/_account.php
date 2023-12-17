@@ -37,7 +37,7 @@ unset($_SESSION['message']); // Xóa thông báo sau khi sử dụng để trán
                 <div class="w-full">
                     <div class="relative ">
                         <div class="w-full h-full before:w-full before:bg-[rgba(0,0,0,.5)] before:content-['']  before:h-full before:absolute before:top-0 before:left-0 py-[75px]
-                    " style="background-image: url(./media/img/pendant-908944_1920.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
+                    " style="background-image: url(./public/media/img/pendant-908944_1920.jpg); background-size: cover ; background-repeat:repeat-y ; background-position: center; background-attachment: scroll;">
                         </div>
                         <div
                             class="font-poppins absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white block  text-center w-full py-[50px]">
@@ -153,7 +153,7 @@ unset($_SESSION['message']); // Xóa thông báo sau khi sử dụng để trán
             <?php include "./view/inc/footer.php" ?>
         </div>
     </div>
-    <script src="../public/js/main.js"></script>
+    <script src="./public/js/main.js"></script>
 </body>
 
 </html>
