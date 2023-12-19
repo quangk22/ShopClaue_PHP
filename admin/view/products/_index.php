@@ -33,14 +33,15 @@
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                    <th>STT</th>
+                                        <th>STT</th>
                                         <th>Image</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Category</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -51,25 +52,43 @@
                                         <th>Description</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Category</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
                                     <?php $index = 0; ?>
                                     <?php foreach ($product_list as $product) { ?>
                                         <tr>
-                                            <td><?php echo ++$index; ?></td>
-                                            <td><img src="../../public/media/img/<?php echo $product['image']; ?>.jpg" width="60" height="60"></td>
-                                            <td><?php echo $product['name']; ?></td> 
-                                            <td><?php echo $product['description']; ?></td>
-                                            <td>$<?php echo $product['price']; ?>.000</td>
-                                            <td><?php echo $product['quantity']; ?></td>
                                             <td>
-                                                <a class="btn btn-primary" href="edit.php?product_id=<?php echo $product['id']; ?>">Edit</a>
+                                                <?php echo ++$index; ?>
+                                            </td>
+                                            <td><img src="../../public/media/img/<?php echo $product['image']; ?>.jpg"
+                                                    width="60" height="60"></td>
+                                            <td>
+                                                <?php echo $product['name']; ?>
                                             </td>
                                             <td>
-                                                <a class="btn btn-danger" href="delete.php?product_id=<?php echo $product['id']; ?>">Delete</a></td>
+                                                <?php echo $product['description']; ?>
+                                            </td>
+                                            <td>$
+                                                <?php echo $product['price']; ?>.000
+                                            </td>
+                                            <td>
+                                                <?php echo $product['quantity']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo get_category($product['category_id'])['name'];?>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-primary"
+                                                    href="edit.php?product_id=<?php echo $product['id']; ?>">Edit</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger"
+                                                    href="delete.php?product_id=<?php echo $product['id']; ?>">Delete</a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "image" => $_POST['image'],
         "name" => $_POST['name'],
         "description" => $_POST['description'],
+        "category" => $_POST["category"],
     );
 
     update_category($updateCategory);
@@ -18,6 +19,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $category_id = $_GET['category_id'];
     $category = get_category($category_id);
-
     include_once '../view/category/_edit.php';
 }

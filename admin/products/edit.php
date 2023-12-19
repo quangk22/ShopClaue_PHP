@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "description" => $_POST["description"],
         "price" => $_POST["price"],
         "quantity" => $_POST["quantity"],
+        "category_id" => $_POST["category_id"],
     );
 
     update_products($products_id);
@@ -20,6 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $product_id = $_GET['product_id'];
     $product = get_products($product_id);
-
+    $catecoryLits = get_all_categories();
     include_once '../view/products/_edit.php';
 }

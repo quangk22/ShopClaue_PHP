@@ -37,8 +37,8 @@
                                         <th>Img</th>
                                         <th>Name</th>
                                         <th>Description</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>>
                                     </tr>
                                 </thead>
                                 <tfoot>

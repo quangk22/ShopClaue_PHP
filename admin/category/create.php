@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     "image" => $_POST['image'],
     "name" => $_POST['name'],
     "description" => $_POST['description'],
+    "category" => $_POST['category']
    );
     insert_category($createCategory);
 

@@ -74,7 +74,7 @@ function get_category($category_id){
         return array(
             'id' => $row['id'],
             'name' => $row['name'],
-            'img' => $row['img'],
+            'img' => $row['image'],
             'description' => $row['description'],
         );
     }

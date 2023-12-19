@@ -40,8 +40,8 @@
                                         <th>Email</th>
                                         <th>Password</th>
                                         <th>Role</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tfoot>

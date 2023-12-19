@@ -201,7 +201,8 @@ function get_all_by_orders()
     FROM `orders`
     JOIN order_items ON `orders`.`id` = order_items.order_id
     JOIN products ON order_items.product_id = products.id
-    GROUP BY code;";
+    GROUP BY code
+    ORDER BY datee DESC;";
 
     $stmt = $pdo->prepare($sql);
 

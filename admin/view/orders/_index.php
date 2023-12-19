@@ -36,7 +36,7 @@
                                     <th>STT</th>
                                         <th>Code</th>
                                         <th>Status</th>
-                                        <th>User_id</th>
+                                        <th>User</th>
                                         <th>Address</th>
                                         <th>Phone</th>
                                         <th>Date</th>
@@ -49,7 +49,7 @@
                                         <th>STT</th>
                                         <th>Code</th>
                                         <th>Status</th>
-                                        <th>User_id</th>
+                                        <th>User</th>
                                         <th>Address</th>
                                         <th>Phone</th>
                                         <th>Date</th>
@@ -64,7 +64,7 @@
                                             <td><?php echo ++$index; ?></td>
                                             <td><?php echo $order['code']; ?></td>
                                             <td><?php echo $order['status']; ?></td> 
-                                            <td><?php echo $order['users_id']; ?></td>
+                                            <td><?php echo get_users( $order['users_id'])['email'] ;?></td>
                                             <td><?php echo $order['address']; ?></td>
                                             <td><?php echo $order['phone']; ?></td>
                                             <td><?php echo $order['date']; ?></td>

@@ -52,6 +52,14 @@
                                     <label for="exampleInputPassword1">Quantity</label>
                                     <input type="text" name="quantity" value="<?php echo $product['quantity']; ?>"  class="form-control" id="exampleInputPassword1" placeholder="Quantity">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Category</label>
+                                    <select name="category_id" class="form-control">
+                                        <?php foreach ($catecoryLits as $value) { ?>
+                                            <option <?php if($product['category_id'] == $value['id'] ) echo 'selected' ?> value="<?php echo $value['id'] ?>"><?php echo $value['name'] ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
                                 <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
                             </form>
                         </div>

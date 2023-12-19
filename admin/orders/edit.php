@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $order_id = $_GET['order_id'];
     $order = get_orders($order_id);
+    $orderList = get_all_users();
     if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
         include_once '../view/orders/_edit.php';
     }else{
