@@ -43,33 +43,6 @@
                                     sporty vibe.</p>
                             </div>
                             <div class="mb-5">
-                                <form action="" class="flex">
-                                    <div class="mr-[10px]">
-                                        <div
-                                            class="relative py-2 flex justify-center items-center border border-black w-[115px] rounded-full font-semibold">
-                                            <input type="number" min="1" value="1" inputmode="none" readonly
-                                                class="outline-none w-full flex text-center bg-transparent"
-                                                id="customNumberInput">
-                                            <div
-                                                class="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full">
-                                                <div class="ml-3" id="decreaseButton"><i class="fa-solid fa-minus"></i>
-                                                </div>
-                                                <div class="mr-3" id="increaseButton"><i class="fa-solid fa-plus"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mr-[10px]">
-                                        <button
-                                            class="bg-[#56cfe1] w-[164px] rounded-full flex justify-center items-center text-center text-sm font-semibold text-white py-2.5 uppercase">
-                                            <a href="detail_product.php?id=">Add to cart</a>
-                                            <!-- // -->
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center items-center border border-black rounded-full">
-                                        <i class="fa-regular fa-heart p-3"></i>
-                                    </div>
-                                </form>
                                 <div class="mt-6 font-semibold text-sm">
                                     <a href="#" class="mr-">Size Guide</a>
                                     <a href="#">Delivery &amp; Return</a>

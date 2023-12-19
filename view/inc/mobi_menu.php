@@ -20,15 +20,15 @@
                     <div class="mt-5">
                         <ul class="text-sm">
                             <li class="mb-5 flex justify-between  ">
-                                <a href="../public/home.php">Demo</a>
+                                <a href="./home.php">Demo</a>
                                 <span><i class="fa-solid fa-plus"></i></span>
                             </li>
                             <li class="mb-5 flex justify-between  ">
-                                <a href="../public/product.php">Shop</a>
+                                <a href="./product.php">Shop</a>
                                 <span><i class="fa-solid fa-plus"></i></span>
                             </li>
                             <li class="mb-5 flex justify-between  ">
-                                <a href="">Product</a>
+                                <a href="./home.php">Product</a>
                                 <span><i class="fa-solid fa-plus"></i></span>
                             </li>
                             <li class="mb-5 flex justify-between  ">
@@ -36,15 +36,15 @@
                                
                             </li>
                             <li class="mb-5 flex justify-between  ">
-                                <a href="">Portfolio</a>
+                                <a href="./home.php">Portfolio</a>
                                 <span><i class="fa-solid fa-plus"></i></span>
                             </li>
                             <li class="mb-5 flex justify-between  ">
-                                <a href="">Lookbook</a>
+                                <a href="./home.php">Lookbook</a>
                                 <span><i class="fa-solid fa-plus"></i></span>
                             </li>
                             <li class="mb-5 flex justify-between ">
-                                <a href="">Blog</a>
+                                <a href="./home.php">Blog</a>
                                 <span><i class="fa-solid fa-plus"></i></span>
                             </li>
                         </ul>

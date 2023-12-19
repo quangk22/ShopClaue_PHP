@@ -154,12 +154,12 @@
                                 <?php } ?>
                             </div>
                             <!-- end product -->
-                            <!-- <div class="Btn Load More flex justify-center mt-[40px] mb-[60px]">
-                                <button
+                            <div class="BtnLoadMore flex justify-center mt-[40px] mb-[60px]">
+                                <div
                                     class="border-[2px] border-[#333] rounded-full px-11 py-3 hover:bg-[#56CFE1] hover:border-[#56CFE1] ">
-                                    <a href="" class="font-poppins text-sm"> Load More</a>
-                                </button>
-                            </div> -->
+                                    <div class="font-poppins text-sm"> Load More</div>
+                                </div>
+                            </div>
                             <div class="mt-10">
                                 <div class="subheadLine-label uppercase tracking-widest text-black text-2xl font-poppins font-bold
                                 ">

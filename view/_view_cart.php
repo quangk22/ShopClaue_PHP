@@ -50,8 +50,8 @@
                                         <th class="p-4 text-start">Product</th>
                                         <th class="p-4 max-md:hidden">Price</th>
                                         <th class="p-4 max-md:hidden">Quantity</th>
-                                        <th class="p-4  md:hidden"></th>
-                                        <th class="p-4 max-md:flex max-md:justify-end inline-block">Total</th>
+                                        <!-- <th class="p-4  md:hidden"></th> -->
+                                        <th class="p-4 flex justify-center">Total</th>
                                         <th class="p-4 max-md:hidden">Remove</th>
                                     </tr>
                                 </thead>

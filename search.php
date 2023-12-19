@@ -5,8 +5,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 }
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $productList = get_all_products();
-    $productSearch = []; // Khởi tạo mảng trống
+    // $productList = get_all_products();
+    // $productSearch = []; // Khởi tạo mảng trống
     if (isset($_GET['search'])) {
         $search = $_GET['search'];
         // Gọi hàm xử lý tìm kiếm với từ khóa
