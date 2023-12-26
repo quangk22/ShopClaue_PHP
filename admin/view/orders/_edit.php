@@ -41,7 +41,7 @@
                                     <input type="text" name="status" value="<?php echo $order['status']; ?>"  class="form-control" id="exampleInputPassword1" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Users_id</label>
+                                    <label for="exampleInputPassword1">Users</label>
                                     <select name="users_id" class="form-control">
                                         <?php foreach ($orderList as $value) { ?>
                                             <option <?php if($order['id'] == $value['id'] ) echo 'selected' ?> value="<?php echo $value['id'] ?>"><?php echo $value['email'] ?></option>

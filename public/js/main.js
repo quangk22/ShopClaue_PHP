@@ -412,19 +412,19 @@ if (searchInput) {
     }
   });
 }
-function showProduct() {
-  var containeProduct = document.querySelectorAll("#product1 .item");
-  var btnShowMore = document.querySelector('.BtnLoadMore');
-  if (containeProduct.length > 8) {
-    for (let index = 8; index < containeProduct.length; index++) {
-      containeProduct[index].style.display = "none";
-    }
-  }
-  btnShowMore.addEventListener('click', function(){
-    btnShowMore.style.display = 'none';
-    for (let index = 8; index < containeProduct.length; index++) {
-        containeProduct[index].style.display = "block";
-      }
-  })
-}
-showProduct();
+// function showProduct() {
+//   var containeProduct = document.querySelectorAll("#product1 .item");
+//   var btnShowMore = document.querySelector('.BtnLoadMore');
+//   if (containeProduct.length > 8) {
+//     for (let index = 8; index < containeProduct.length; index++) {
+//       containeProduct[index].style.display = "none";
+//     }
+//   }
+//   btnShowMore.addEventListener('click', function(){
+//     btnShowMore.style.display = 'none';
+//     for (let index = 8; index < containeProduct.length; index++) {
+//         containeProduct[index].style.display = "block";
+//       }
+//   })
+// }
+// showProduct();

@@ -148,4 +148,125 @@ function get_search_products($search){
 
     return $result;
 }
+function get_products_by_page($page){
+    global $pdo;
+
+    $perPage = 8;
+    $begin = ($page - 1) * $perPage;
+
+    $sql = "SELECT * FROM PRODUCTS LIMIT $begin, $perPage";
+    $stmt = $pdo->prepare($sql);
+    
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+    
+     
+    $product_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $product = array(
+            'id' => $row['id'],
+            'image' => $row['image'],
+            'description' => $row['description'],
+            'price' => $row['price'],
+            'name' => $row['name'],
+            'quantity' => $row['quantity'],
+        );
+        array_push($product_list, $product);
+    }
+    
+    return $product_list;
+}
+
+function get_products_min_price()
+{
+    global $pdo;
+
+    $sql = "SELECT PRICE FROM PRODUCTS ORDER BY PRICE ASC LIMIT 1";
+
+    $stmt = $pdo->prepare($sql);
+
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchColumn();
+    // Lặp kết quả và xây dựng mảng tên sản phẩm
+
+
+    return $result;
+}
+function get_products_by_category($category_id){
+    global $pdo;
+
+    $sql = "SELECT products.id, products.image, products.name, products.description, price, quantity, category_id
+    FROM products
+    JOIN categories ON products.category_id = categories.id
+    WHERE category_id = :id;";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $category_id);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+     
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+     
+    $products_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row){
+        $products= array(
+            'id' => $row['id'],
+            'image' => $row['image'],
+            'name' => $row['name'],
+            'description' => $row['description'],
+            'price' => $row['price'],
+            'quantity' => $row['quantity'],
+            'category_id' => $row['category_id']
+        );
+        array_push($products_list, $products);
+    }
+    
+    return $products_list;
+}
+function get_products_by_category_and_page($category_id, $page) {
+    global $pdo;
+
+    $perPage = 8;
+    $begin = ($page - 1) * $perPage;
+
+    $sql = "SELECT * FROM products WHERE category_id = :category_id LIMIT $begin, $perPage";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    // Lấy danh sách kết quả
+    $result = $stmt->fetchAll();
+
+    $product_list = array();
+
+    // Lặp kết quả
+    foreach ($result as $row) {
+        $product = array(
+            'id' => $row['id'],
+            'image' => $row['image'],
+            'description' => $row['description'],
+            'price' => $row['price'],
+            'name' => $row['name'],
+            'quantity' => $row['quantity'],
+        );
+        array_push($product_list, $product);
+    }
+
+    return $product_list;
+}
 ?>
