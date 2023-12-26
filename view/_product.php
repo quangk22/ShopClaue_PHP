@@ -91,7 +91,7 @@
                         </div> -->
                         <div class="grid grid-cols-6 gap-5 mt-5">
                             <div class="product  col-span-5  z-0">
-                                <div class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500 mt-10 mb-10"
+                                <div class="product1 grid grid-cols-4 gap-8 max-lg:grid-cols-3 max-sm:grid-cols-2 transition-all ease-out duration-500 mb-10"
                                     id="product1">
                                     <?php foreach ($productList as $product) { ?>
                                         <div class="item">
@@ -168,7 +168,7 @@
                                 <div>
                                     <aside class="widget woocommerce widget_product_categories">
                                         <h4 class=" text-lg font-poppins mb-2 pb-5">Product Categories</h4>
-                                        <hr class="border-2 border-black w-[60px] mt-[-30px] mb-8">
+                                        <hr class="border-2 border-black w-[60px] mt-[-30px] mb-2">
                                         <ul class="product-categories space-y-2 text-[14px]">
                                             <?php foreach ($category_list as $category) { ?>
                                                 <li class="cat-item cat-item-86 current-cat">
